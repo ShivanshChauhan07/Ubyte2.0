@@ -18,7 +18,7 @@ const Steps = () => {
         </div>
         <div>
           <div className="flex justify-between my-6 ">
-            <figure className="bg-[#3f78e0] rounded-full w-fit h-10 p-4 flex items-center">
+            <figure className="bg-[#0c96d4] rounded-full w-fit h-10 p-4 flex items-center">
               <h1 className="font-medium text-lg text-white rounded-full">1</h1>
             </figure>
             <div className="mx-10 pr-36">
@@ -30,7 +30,7 @@ const Steps = () => {
             </div>
           </div>
           <div className="flex justify-between my-6 ">
-            <figure className="bg-[#3f78e0] rounded-full w-fit h-10 p-4 flex items-center">
+            <figure className="bg-[#0c96d4] rounded-full w-fit h-10 p-4 flex items-center">
               <h1 className="font-medium text-lg text-white rounded-full">2</h1>
             </figure>
             <div className="mx-10 pr-36">
@@ -42,7 +42,7 @@ const Steps = () => {
             </div>
           </div>
           <div className="flex justify-between my-6 ">
-            <figure className="bg-[#3f78e0] rounded-full w-fit h-10 p-4 flex items-center">
+            <figure className="bg-[#0c96d4] rounded-full w-fit h-10 p-4 flex items-center">
               <h1 className="font-medium text-lg text-white rounded-full">3</h1>
             </figure>
             <div className="mx-10 pr-36">

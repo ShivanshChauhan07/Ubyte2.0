@@ -17,10 +17,10 @@ const Hero = ({ heroHeight }) => {
             support every stage of your growth.
           </p>
           <div>
-            <button className=" bg-[#3f78e0] text-white text-lg  rounded-badge w-40 p-4 px-6 font-bold mr-3 ">
+            <button className=" bg-[#0c96d4] text-white text-lg  rounded-badge w-40 p-4 px-6 font-bold mr-3 ">
               Explore Now
             </button>
-            <button className="border-2 border-[#3f78e0] text-[#3f78e0] text-lg w-36 rounded-badge p-3 px-6 font-bold hover:bg-[#3f78e0] hover:text-white ">
+            <button className="border-2 border-[#0c96d4] text-[#0c96d4] text-lg w-36 rounded-badge p-3 px-6 font-bold hover:bg-[#0c96d4] hover:text-white ">
               Free Trial
             </button>
           </div>
