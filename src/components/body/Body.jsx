@@ -7,7 +7,7 @@ const Body = ({ heroHeight }) => {
       style={{ minHeight: heroHeight }}
       className={` px-28 font-['Manrope'] flex my-5 h`}
     >
-      <div className=" w-1/2 pt-40">
+      <div className=" w-1/2 pt-32">
         <div>
           <h1 className="font-semibold text-[#343f52] text-5xl font-serif tracking-wide leading-tight">
             We bring solutions to <br /> make life easier for <br /> our
@@ -21,7 +21,7 @@ const Body = ({ heroHeight }) => {
             <button className=" bg-[#3f78e0] text-white text-lg  rounded-badge w-40 p-4 px-6 font-bold mr-3 ">
               Explore Now
             </button>
-            <button className=" text-[#3f78e0] text-lg w-36 rounded-badge p-3 px-6 font-bold hover:bg-[#3f78e0] hover:text-white ">
+            <button className="border-2 border-[#3f78e0] text-[#3f78e0] text-lg w-36 rounded-badge p-3 px-6 font-bold hover:bg-[#3f78e0] hover:text-white ">
               Free Trial
             </button>
           </div>
