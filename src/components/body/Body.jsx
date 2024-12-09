@@ -21,7 +21,7 @@ const Body = ({ heroHeight }) => {
             <button className=" bg-[#3f78e0] text-white text-lg  rounded-badge w-40 p-4 px-6 font-bold mr-3 ">
               Explore Now
             </button>
-            <button className=" text-[#3f78e0] text-lg w-36 rounded-badge p-3 px-6 font-bold hover:bg-[#3f78e0] hover:text-white ">
+            <button className="border-2 border-[#3f78e0] text-[#3f78e0] text-lg w-36 rounded-badge p-3 px-6 font-bold hover:bg-[#3f78e0] hover:text-white ">
               Free Trial
             </button>
           </div>
