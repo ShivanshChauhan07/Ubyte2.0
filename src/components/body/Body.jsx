@@ -7,7 +7,7 @@ const Body = ({ heroHeight }) => {
       style={{ minHeight: heroHeight }}
       className={` px-28 font-['Manrope'] flex my-5 h`}
     >
-      <div className=" w-1/2 pt-40">
+      <div className=" w-1/2 pt-32">
         <div>
           <h1 className="font-semibold text-[#343f52] text-5xl font-serif tracking-wide leading-tight">
             We bring solutions to <br /> make life easier for <br /> our
