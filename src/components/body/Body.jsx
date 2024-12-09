@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "../bodyItem/Hero";
 import Service from "../bodyItem/Service";
+import Steps from "../bodyItem/Steps";
 
 const Body = ({ heroHeight }) => {
   console.log(heroHeight);
@@ -8,6 +9,7 @@ const Body = ({ heroHeight }) => {
     <>
       <Hero heroHeight={heroHeight} />;
       <Service />
+      <Steps />
     </>
   );
 };
