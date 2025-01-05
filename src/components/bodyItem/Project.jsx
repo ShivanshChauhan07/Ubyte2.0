@@ -1,15 +1,63 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "motion/react";
+
+const projectVariant = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+};
+
+const projectChildrenVariant = {
+  hidden: {
+    x: -40,
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      damping: 50,
+      ease: "easeInOut",
+    },
+  },
+};
 
 const Project = () => {
+  const projectRef = useRef(null);
+  const projectView = useInView(projectRef, { once: true, amount: 0.5 });
+  const control = useAnimation();
+
+  useEffect(() => {
+    if (projectView) control.start("visible");
+  }, [projectRef, projectView]);
   return (
-    <section className=" text-center">
-      <h4 className='font-["Manrope"] font-bold text-[#aab0bc]'>
+    <motion.section
+      ref={projectRef}
+      initial="hidden"
+      animate={control}
+      variants={projectVariant}
+      className=" text-center"
+    >
+      <motion.h4
+        variants={projectChildrenVariant}
+        className='font-["Manrope"] font-bold text-[#aab0bc]'
+      >
         LATEST PROJECTS
-      </h4>
-      <h2 className="font-serif font-semibold text-[#343f52] text-4xl my-5 tracking-wide leading-snug">
+      </motion.h4>
+      <motion.h2
+        variants={projectChildrenVariant}
+        className="font-serif font-semibold text-[#343f52] text-4xl my-5 tracking-wide leading-snug"
+      >
         Check out some of our awesome projects <br /> with creative ideas and
         great design.
-      </h2>
+      </motion.h2>
       <div className="carousel carousel-center bg-white rounded-box w-full space-x-4 p-4">
         <div className="carousel-item w-1/3">
           <img
@@ -54,7 +102,7 @@ const Project = () => {
           />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <section className="px-28 font-['Manrope'] bg-gradient-to-b from-white from-10% to-[#0c96d4] text-[#60697b] font-medium pb-28 ">
-      <div className="flex">
+      <div className="flex pt-6">
         <div className="basis-1/4">
           <img src="/logo.png" alt="logo" className="w-[98px] h-16" />
           <p className="my-6">

@@ -4,7 +4,8 @@ import Service from "../bodyItem/Service";
 import Steps from "../bodyItem/Steps";
 import Project from "../bodyItem/Project";
 import Self from "../bodyItem/Self";
-import Footer from "../bodyItem/Footer";
+
+import Team from "../bodyItem/Team";
 
 const Body = ({ heroHeight }) => {
   console.log(heroHeight);
@@ -15,7 +16,7 @@ const Body = ({ heroHeight }) => {
       <Steps />
       <Project />
       <Self />
-      <Footer />
+      <Team />
     </>
   );
 };

@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import Body from "./components/Body/Body";
 import Navbar from "./components/Navbar/Navbar";
 import Topbar from "./components/topbar/Topbar";
+import Footer from "./components/bodyItem/Footer";
+import { Outlet } from "react-router";
 
 function App() {
   const navBarRef = useRef(null);
@@ -44,7 +46,8 @@ function App() {
     <div>
       <Topbar ref={topBarRef} />
       <Navbar ref={navBarRef} />
-      <Body heroHeight={heroHeight} />
+      <Outlet context={{ heroHeight }} />
+      <Footer />
     </div>
   );
 }
