@@ -76,8 +76,9 @@ const Team = () => {
         </motion.div>
         <motion.div variants={teamChildVariant}>
           <p className="px-2">
-            Donec id elit non mi porta gravida at eget metus. Morbi leo risus,
-            porta ac consectetur ac, vestibulum at eros tempus porttitor.
+            With expertise in design, manufacturing, and global delivery, we
+            ensure efficient, high-quality results. Let us handle the technical
+            complexities so you can focus on growing your brand
           </p>
         </motion.div>
         <motion.div variants={teamChildVariant}>

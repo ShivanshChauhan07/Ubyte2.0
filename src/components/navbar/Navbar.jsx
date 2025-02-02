@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 import { motion } from "motion/react";
-import { Link, Links } from "react-router";
+import { Link, Links, useLocation } from "react-router";
 
 const ulVariant = {
   hidden: {
@@ -32,10 +32,13 @@ const liVariant = {
 };
 
 const Navbar = forwardRef((props, ref) => {
+  const location = useLocation();
   return (
     <nav
       ref={ref}
-      className=" flex justify-between px-28 font-['Manrope'] font-bold mt-5 "
+      className={` flex justify-between px-28 font-['Manrope'] font-bold  ${
+        location.pathname === "/about" ? "bg-[#f6f7f9] pt-5" : "mt-5"
+      }`}
     >
       <div className=" basis-1/5 my-auto">
         <motion.img
@@ -109,7 +112,7 @@ const Navbar = forwardRef((props, ref) => {
           }}
           className=" bg-[#0c96d4] text-white rounded-3xl p-3 px-6 font-bold hover:shadow-lg "
         >
-          Contact
+          Contact Us
         </motion.button>
       </div>
     </nav>

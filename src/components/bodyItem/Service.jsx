@@ -50,22 +50,22 @@ const Service = () => {
         className=" flex justify-evenly "
       >
         <motion.figure variants={companiesChildrenVariant}>
-          <img src="/companies/image1.png" alt="" className="w-36 p-3 h-full" />
+          <img src="/companies/image1.jpg" alt="" className="w-36 p-3 h-20" />
         </motion.figure>
         <motion.figure variants={companiesChildrenVariant}>
-          <img src="/companies/image2.png" alt="" className="w-36 p-3 h-full" />
+          <img src="/companies/image2.jpg" alt="" className="w-36 p-3 h-20" />
         </motion.figure>
         <motion.figure variants={companiesChildrenVariant}>
-          <img src="/companies/image3.png" alt="" className="w-36 p-3 h-full" />
+          <img src="/companies/image3.webp" alt="" className="w-36 p-3 h-20" />
         </motion.figure>
         <motion.figure variants={companiesChildrenVariant}>
-          <img src="/companies/image4.png" alt="" className="w-36 p-3 h-full" />
+          <img src="/companies/image4.png" alt="" className="w-36 p-3 h-20" />
         </motion.figure>
         <motion.figure variants={companiesChildrenVariant}>
-          <img src="/companies/image5.png" alt="" className="w-36 p-3 h-full" />
+          <img src="/companies/image5.png" alt="" className="w-36 p-3 h-20" />
         </motion.figure>
         <motion.figure variants={companiesChildrenVariant}>
-          <img src="/companies/image6.png" alt="" className="w-36 p-3 h-full" />
+          <img src="/companies/image6.jpg" alt="" className="w-36 p-3 h-20" />
         </motion.figure>
       </motion.div>
       <motion.div
