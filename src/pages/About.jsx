@@ -9,7 +9,7 @@ const About = () => {
       <section className="">
         <div className="text-center leading-loose p-2 bg-[#f6f7f9] font-['Manrope']  ">
           <h2 className="text-5xl font-bold m-6  text-[#343f52]">
-            Hello! This is Ubyte
+            Hello! This is UByte
           </h2>
           <h5 className="text-[#60697b] font-medium">
             A company turning ideas into beautiful things
