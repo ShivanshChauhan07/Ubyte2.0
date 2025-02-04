@@ -84,27 +84,43 @@ const Self = () => {
           variants={whoChildVariant}
           className="text-[#aab0bc] my-5 pr-10"
         >
-          Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-          ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget
-          quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur
-          et.
+          We provide end to end product design and manufacturing services to
+          individuals and business at unbeatable prices. Backed by trust of 100+
+          clients for 400+ products spread across the world, we will bring your
+          idea to life. So why not give us a try.
         </motion.p>
         <div className="text-[#aab0bc] flex">
           <div>
             <motion.p variants={whoChildVariant} className="my-3">
               {" "}
-              Aenean eu leo quam ornare curabitur blandit tempus.
+              <span className="font-semibold text-[#343f52]">
+                Full-Service Solutions:
+              </span>{" "}
+              We handle every stage of product development, from design to
+              manufacturing.
             </motion.p>
             <motion.p variants={whoChildVariant} className="my-3">
-              Aenean eu leo quam ornare curabitur blandit tempus.
+              <span className="font-semibold text-[#343f52]">
+                {" "}
+                Global Expertise:{" "}
+              </span>{" "}
+              Successful products delivered across the world.
             </motion.p>
           </div>
           <div>
             <motion.p variants={whoChildVariant} className="my-3">
-              Aenean eu leo quam ornare curabitur blandit tempus.
+              <span className="font-semibold text-[#343f52]">
+                {" "}
+                Skilled Team:{" "}
+              </span>{" "}
+              Experienced engineers and designers ensure quality and innovation.
             </motion.p>
             <motion.p variants={whoChildVariant} className="my-3">
-              Aenean eu leo quam ornare curabitur blandit tempus.
+              <span className="font-semibold text-[#343f52]">
+                {" "}
+                Cost-Effective:{" "}
+              </span>{" "}
+              High-quality solutions at competitive prices.
             </motion.p>
           </div>
         </div>

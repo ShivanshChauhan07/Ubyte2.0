@@ -4,6 +4,8 @@ import ProjectPage from "../pages/ProjectPage";
 import App from "../App";
 import Body from "../components/Body/Body";
 import Error from "../pages/Error";
+import Shop from "../pages/Shop";
+import ProductPage from "../pages/ProductPage";
 
 const routes = createBrowserRouter([
   {
@@ -21,6 +23,14 @@ const routes = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/shop",
+        element: <Shop />,
+      },
+      {
+        path: "/product",
+        element: <ProductPage />,
       },
     ],
   },

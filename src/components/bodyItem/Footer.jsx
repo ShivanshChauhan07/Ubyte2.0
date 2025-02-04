@@ -14,12 +14,12 @@ const Footer = () => {
         <div className="basis-1/4 px-4">
           <h6 className="text-lg text-[#343f52] font-bold">Get in Touch</h6>
           <address className="pr-7 my-2 leading-relaxed">
-            Moonshine St. 14/05 <br /> Light City, London,
-            <br /> United Kingdom
+            UByte Consulting <br /> 2181, Sector 28 HB Colony,
+            <br /> Faridabad, Haryana - 121008
           </address>
           <p className="my-3">
-            info@email.com <br />
-            00 (123) 456 78 90
+            contact@ubyte.com <br />
+            +91-7982725030
           </p>
         </div>
         <div className="basis-1/4 px-4">
@@ -33,7 +33,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="basis-1/4 px-4">
-          <h6 className="text-lg text-[#343f52] font-bold">Our Newsletter</h6>
+          <h6 className="text-lg text-[#343f52] font-bold">Our Social Media</h6>
           <p className="my-2 leading-relaxed">
             Subscribe to our newsletter to get our <br />
             news & deals delivered to you.

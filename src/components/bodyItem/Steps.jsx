@@ -93,14 +93,15 @@ const Steps = () => {
                 variants={worksChildVariant}
                 className="text-lg font-semibold"
               >
-                Collect Ideas
+                Project Requirement
               </motion.h4>
               <motion.p
                 variants={worksChildVariant}
                 className="text-[#60697b] text-base leading-snug"
               >
-                Nulla vitae elit libero pharetra augue dapibus. Praesent commodo
-                cursus.
+                Share your project requirements or idea with us, and we’ll
+                assist you in navigating the technical intricacies of your
+                development.
               </motion.p>
             </div>
           </div>
@@ -113,14 +114,14 @@ const Steps = () => {
                 variants={worksChildVariant}
                 className="text-lg font-semibold"
               >
-                Data Analysis
+                Quotation and Timeline
               </motion.h4>
               <motion.p
                 variants={worksChildVariant}
                 className="text-[#60697b] text-base leading-snug"
               >
-                Nulla vitae elit libero pharetra augue dapibus. Praesent commodo
-                cursus.
+                Get a quotation for your development within 1 to 2 days after
+                finalizing the requirements.
               </motion.p>
             </div>
           </div>
@@ -133,14 +134,15 @@ const Steps = () => {
                 variants={worksChildVariant}
                 className="text-lg font-semibold"
               >
-                Finalize Product
+                Sit back and Relax
               </motion.h4>
               <motion.p
                 variants={worksChildVariant}
                 className="text-[#60697b] text-base leading-snug"
               >
-                Nulla vitae elit libero pharetra augue dapibus. Praesent commodo
-                cursus.
+                While our expert team develops your product, you can focus on
+                building your brand and driving sales for maximum market
+                success.
               </motion.p>
             </div>
           </div>

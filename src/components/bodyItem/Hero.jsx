@@ -45,22 +45,22 @@ const Hero = ({ heroHeight }) => {
             variants={divChildVariant}
             className="font-semibold text-[#343f52] text-5xl font-serif tracking-wide leading-tight max-sm:text-2xl "
           >
-            We bring solutions to <br /> make life easier for <br /> our
-            customers.
+            Converting your <br />
+            Idea into product
           </motion.h1>
           <motion.p
             variants={divChildVariant}
             className="text-[#60697b] text-2xl font-medium leading-relaxed my-6 max-sm:text-lg"
           >
-            We have considered our solutions to <br />
-            support every stage of your growth.
+            From Design, Prototyping, Testing, Validation,
+            <br /> Certifications to Production, we do it all
           </motion.p>
           <motion.div variants={divChildVariant}>
             <motion.button className=" bg-[#0c96d4] text-white text-lg  rounded-badge w-40 p-4 px-6 font-bold mr-3 ">
               Explore Now
             </motion.button>
-            <motion.button className="border-2 border-[#0c96d4] text-[#0c96d4] text-lg w-36 rounded-badge p-3 px-6 font-bold hover:bg-[#0c96d4] hover:text-white ">
-              Free Trial
+            <motion.button className="border-2 border-[#0c96d4] text-[#0c96d4] text-lg w-56 rounded-badge p-3 px-6 font-bold hover:bg-[#0c96d4] hover:text-white ">
+              Meet Our Experts
             </motion.button>
           </motion.div>
         </motion.div>
