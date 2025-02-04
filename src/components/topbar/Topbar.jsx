@@ -4,11 +4,11 @@ const Topbar = forwardRef((props, ref) => {
   return (
     <div
       ref={ref}
-      className="bg-[#0c96d4] text-white flex items-center font-['Manrope'] font-bold text-base  h-16 px-28"
+      className=" bg-[#0c96d4]  text-white flex items-center font-['Manrope'] font-bold text-base  h-16 px-28 "
     >
       <div>
         <address className="text-nowrap">
-          <i className="fa-solid fa-location-dot mx-2 text-xl"></i>
+          <i className="fa-solid fa-location-dot mx-2 text-xl "></i>
           Moonshine St. 14/05 Light City
         </address>
       </div>
