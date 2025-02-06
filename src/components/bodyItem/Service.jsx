@@ -41,31 +41,56 @@ const Service = () => {
     if (logoView) control.start("visible");
   }, [logoRef, logoView]);
   return (
-    <section ref={sectionRef} className=" px-28">
+    <section ref={sectionRef} className=" px-28 max-sm:px-5">
       <motion.div
         ref={logoRef}
         initial="hidden"
         animate={control}
         variants={companiesVariant}
-        className=" flex justify-evenly "
+        className=" flex justify-evenly max-sm:flex-wrap "
       >
         <motion.figure variants={companiesChildrenVariant}>
-          <img src="/companies/image1.jpg" alt="" className="w-36 p-3 h-20" />
+          <img
+            src="/companies/image1.jpg"
+            alt=""
+            className="w-36 p-3 h-20 max-sm:w-max"
+          />
         </motion.figure>
         <motion.figure variants={companiesChildrenVariant}>
-          <img src="/companies/image2.jpg" alt="" className="w-36 p-3 h-20" />
+          {" "}
+          <img
+            src="/companies/image2.jpg"
+            alt=""
+            className="w-36 p-3 h-20 max-sm:w-ful"
+          />
         </motion.figure>
         <motion.figure variants={companiesChildrenVariant}>
-          <img src="/companies/image3.webp" alt="" className="w-36 p-3 h-20" />
+          <img
+            src="/companies/image3.webp"
+            alt=""
+            className="w-36 p-3 h-20 max-sm:w-max"
+          />
         </motion.figure>
         <motion.figure variants={companiesChildrenVariant}>
-          <img src="/companies/image4.png" alt="" className="w-36 p-3 h-20" />
+          <img
+            src="/companies/image4.png"
+            alt=""
+            className="w-36 p-3 h-20 max-sm:w-max"
+          />
         </motion.figure>
         <motion.figure variants={companiesChildrenVariant}>
-          <img src="/companies/image5.png" alt="" className="w-36 p-3 h-20" />
+          <img
+            src="/companies/image5.png"
+            alt=""
+            className="w-36 p-3 h-20 max-sm:w-max"
+          />
         </motion.figure>
         <motion.figure variants={companiesChildrenVariant}>
-          <img src="/companies/image6.jpg" alt="" className="w-36 p-3 h-20" />
+          <img
+            src="/companies/image6.jpg"
+            alt=""
+            className="w-36 p-3 h-20 max-sm:w-max "
+          />
         </motion.figure>
       </motion.div>
       <motion.div
@@ -76,19 +101,19 @@ const Service = () => {
       >
         <motion.h4
           variants={companiesChildrenVariant}
-          className="font-['Manrope'] text-[#c9cdd4] font-bold mt-32"
+          className="font-['Manrope'] text-[#c9cdd4] font-bold mt-32 max-sm:mt-16"
         >
           WHAT WE DO ?
         </motion.h4>
         <motion.h2
           variants={companiesChildrenVariant}
-          className=" text-[#343f52] text-4xl font-serif font-semibold tracking-wide leading-snug my-4"
+          className=" text-[#343f52] text-4xl font-serif font-semibold tracking-wide leading-snug my-4 max-sm:text-3xl"
         >
           The service we offer is specifically <br /> designed to meet your
           needs.
         </motion.h2>
         <motion.div
-          className=" my-5 flex"
+          className=" my-5 flex max-sm:flex-wrap"
           initial="hidden"
           animate={control}
           variants={companiesVariant}

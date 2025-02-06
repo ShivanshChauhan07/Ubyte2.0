@@ -52,18 +52,18 @@ const Steps = () => {
   }, [workRef, workView]);
 
   return (
-    <section className=" px-28 flex">
+    <section className=" px-5 flex max-sm:flex-wrap max-sm:justify-center">
       <motion.div
         ref={workRef}
         initial={{ x: -50, opacity: 0 }}
         animate={control}
         variants={imgVariant}
-        className="basis-1/2"
+        className="basis-1/2  max-sm:basis-full"
       >
         <img src="/sample/step.png" alt="pic" />
       </motion.div>
       <motion.div
-        className="basis-1/2 py-36"
+        className="basis-1/2 py-36 max-sm:py-10"
         initial="hidden"
         animate={control}
         variants={worksVarirant}
