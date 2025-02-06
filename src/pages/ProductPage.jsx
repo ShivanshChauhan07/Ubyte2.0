@@ -1,17 +1,23 @@
 import React, { useState } from "react";
+import ProductCarousel from "../components/productPage/ProductCarousel";
+import { useParams } from "react-router";
+import productData from "../utils/productData";
 
 const ProductPage = () => {
+  const { id } = useParams();
+  const product = productData.filter((item) => item.id === parseInt(id))[0];
   const [counter, setCounter] = useState(0);
   const [selection, setSelection] = useState(0);
+  const [selectProduct, setSelectProduct] = useState(product.img);
 
   return (
     <>
       <section className="flex px-28 mt-4 gap-x-4 font-['Manrope']">
         <div className="basis-1/2">
-          <img
-            src="https://risingtheme.com/html/demo-furea/furea/assets/img/product/big-product1.webp"
-            alt=""
-            className="w-full h-3/4"
+          <img src={selectProduct} alt="" className="w-full h-3/4" />
+          <ProductCarousel
+            selectProduct={selectProduct}
+            setSelectProduct={setSelectProduct}
           />
         </div>
         <div className="basis-1/2">
@@ -19,7 +25,9 @@ const ProductPage = () => {
             <h3 className="text-3xl font-semibold text-[#343f52]">
               Larger Minimal Wooden Chair
             </h3>
-            <p className="text-[#0c96d4] font-semibold text-xl">$299.00</p>
+            <p className="text-[#0c96d4] font-semibold text-xl">
+              ${product.price}
+            </p>
             <p>⭐⭐⭐⭐⭐</p>
             <p className="text-[#60697b]">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
@@ -59,15 +67,23 @@ const ProductPage = () => {
                 <span className="font-semibold">Type:</span> Sofa
               </h3>
             </div>
-            <h4>CheckOut On </h4>
-            <div className="flex gap-x-4">
-              <figure>
+            <h4>Also CheckOut On </h4>
+            <div className="flex gap-x-8">
+              <figure className="hover:cursor-pointer">
                 {" "}
-                <img src="/amazon.jpg" alt="" />
+                <img
+                  className="w-20 h-10 rounded-md border-2 border-slate-100 "
+                  src="/productPage/amazon.jpg"
+                  alt=""
+                />
               </figure>
-              <figure>
+              <figure className="hover:cursor-pointer">
                 {" "}
-                <img src="/Electronic.webp" alt="" />
+                <img
+                  className="w-20 h-10 rounded-md"
+                  src="/productPage/Electronic.webp"
+                  alt=""
+                />
               </figure>
             </div>
           </div>
