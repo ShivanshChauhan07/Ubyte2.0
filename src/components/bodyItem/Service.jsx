@@ -44,7 +44,7 @@ const Service = () => {
     <section ref={sectionRef} className=" px-28 max-sm:px-5">
       <motion.h4
         variants={companiesChildrenVariant}
-        className="font-['Manrope'] text-[#c9cdd4] font-bold mt-32 text-center my-6"
+        className="font-['Manrope'] text-[#c9cdd4] font-bold mt-32 text-center my-6 max-sm:mt-6"
       >
         OUR PARTNERS & CLIENTS
       </motion.h4>

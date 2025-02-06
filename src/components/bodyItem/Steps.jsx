@@ -63,7 +63,7 @@ const Steps = () => {
         <img src="/sample/step.png" alt="pic" />
       </motion.div>
       <motion.div
-        className="basis-1/2 py-36 max-sm:py-10"
+        className="basis-1/2 py-36 max-sm:py-10 max-sm:basis-full "
         initial="hidden"
         animate={control}
         variants={worksVarirant}
@@ -71,7 +71,7 @@ const Steps = () => {
         <div>
           <motion.h2
             variants={worksChildVariant}
-            className="text-[#343f52] font-serif font-semibold text-3xl tracking-wide"
+            className="text-[#343f52] font-serif font-semibold text-3xl tracking-wide "
           >
             How It Works?
           </motion.h2>
@@ -88,10 +88,10 @@ const Steps = () => {
             <figure className="bg-[#0c96d4] rounded-full w-fit h-10 p-4 flex items-center">
               <h1 className="font-medium text-lg text-white rounded-full">1</h1>
             </figure>
-            <div className="mx-10 pr-36">
+            <div className="mx-10 pr-36 max-sm:pr-0 max-sm:mx-0 max-sm:ml-6">
               <motion.h4
                 variants={worksChildVariant}
-                className="text-lg font-semibold"
+                className="text-lg font-semibold max-sm:text-xxl"
               >
                 Project Requirement
               </motion.h4>
@@ -109,10 +109,10 @@ const Steps = () => {
             <figure className="bg-[#0c96d4] rounded-full w-fit h-10 p-4 flex items-center">
               <h1 className="font-medium text-lg text-white rounded-full">2</h1>
             </figure>
-            <div className="mx-10 pr-36">
+            <div className="mx-10 pr-36 max-sm:pr-0 max-sm:mx-0 max-sm:ml-6 ">
               <motion.h4
                 variants={worksChildVariant}
-                className="text-lg font-semibold"
+                className="text-lg font-semibold max-sm:text-xxl"
               >
                 Quotation and Timeline
               </motion.h4>
@@ -129,10 +129,10 @@ const Steps = () => {
             <figure className="bg-[#0c96d4] rounded-full w-fit h-10 p-4 flex items-center">
               <h1 className="font-medium text-lg text-white rounded-full">3</h1>
             </figure>
-            <div className="mx-10 pr-36">
+            <div className="mx-10 pr-36 max-sm:pr-0 max-sm:mx-0 max-sm:ml-6">
               <motion.h4
                 variants={worksChildVariant}
-                className="text-lg font-semibold"
+                className="text-lg font-semibold max-sm:text-xxl"
               >
                 Sit back and Relax
               </motion.h4>

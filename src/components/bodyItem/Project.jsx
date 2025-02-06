@@ -47,13 +47,13 @@ const Project = () => {
     >
       <motion.h4
         variants={projectChildrenVariant}
-        className='font-["Manrope"] font-bold text-[#aab0bc]'
+        className='font-["Manrope"] font-bold text-[#aab0bc] max-sm:mt-4 max-sm:mx-5'
       >
         LATEST PROJECTS
       </motion.h4>
       <motion.h2
         variants={projectChildrenVariant}
-        className="font-serif font-semibold text-[#343f52] text-4xl my-5 tracking-wide leading-snug"
+        className="font-serif font-semibold text-[#343f52] text-4xl my-5 tracking-wide leading-snug max-sm:mx-5 max-sm:text-3xl"
       >
         Check out some of our awesome projects <br /> with creative ideas and
         great design.
