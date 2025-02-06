@@ -35,7 +35,7 @@ const Hero = ({ heroHeight }) => {
       style={{ minHeight: heroHeight }}
       className={` px-28 font-['Manrope'] flex my-5 h`}
     >
-      <motion.div className=" w-1/2 pt-16">
+      <motion.div className="flex w-1/2  items-center ">
         <motion.div
           initial="hidden"
           animate="visible"

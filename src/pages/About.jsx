@@ -9,7 +9,7 @@ const About = () => {
       <section className="">
         <div className="text-center leading-loose p-2 bg-[#f6f7f9] font-['Manrope']  ">
           <h2 className="text-5xl font-bold m-6  text-[#343f52]">
-            Hello! This is UByte
+            Hello! This is Ubyte
           </h2>
           <h5 className="text-[#60697b] font-medium">
             A company turning ideas into beautiful things
@@ -22,29 +22,55 @@ const About = () => {
           <img src="/about/team.png" alt="" className="" />
         </div>
       </section>
-      <section className=" flex font-['Manrope'] px-28 my-36">
+      <section className=" flex font-['Manrope'] px-28 my-36 gap-4">
         <div className=" basis-1/2">
           <h2 className="text-[#343f52] font-semibold text-4xl tracking-wider">
             Who Are We?
           </h2>
           <h5 className="text-[#60697b] font-medium text-xl my-4 leading-relaxed tracking-wide">
-            We are a digital and branding company that believes in the power of
-            creative strategy and along with great design.
+            Company that believes in the power of creative strategy.
           </h5>
           <p className="text-[#60697b] ">
-            Cum sociis natoque penatibus et magnis dis parturient montes,
-            nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in,
-            egestas eget quam. Praesent commodo cursus magna, vel scelerisque
-            nisl consectetur et.
+            We provide end to end product design and manufacturing services to
+            individuals and business at unbeatable prices. Backed by trust of
+            100+ clients for 400+ products spread across the world, we will
+            bring your idea to life. So why not give us a try.
           </p>
-          <div className="grid grid-cols-2 gap-4 my-6">
-            <p>Aenean eu leo quam ornare curabitur blandit tempus.</p>
-            <p>Aenean eu leo quam ornare curabitur blandit tempus.</p>
-            <p>Aenean eu leo quam ornare curabitur blandit tempus.</p>
-            <p>Aenean eu leo quam ornare curabitur blandit tempus.</p>
+          <div className="grid grid-cols-2 grid-flow-row gap-2 my-6">
+            <p className="my-3">
+              {" "}
+              <span className="font-semibold text-[#343f52]">
+                Full-Service Solutions:
+              </span>{" "}
+              We handle every stage of product development, from design to
+              manufacturing.
+            </p>
+            <p className="my-3">
+              <span className="font-semibold text-[#343f52]">
+                {" "}
+                Global Expertise:{" "}
+              </span>{" "}
+              Successful products delivered across the world.
+            </p>
+            <p className="my-3">
+              <span className="font-semibold text-[#343f52]">
+                {" "}
+                Skilled Team:{" "}
+              </span>{" "}
+              Experienced engineers and designers ensure quality and innovation.
+            </p>
+            <p className="my-3">
+              <span className="font-semibold text-[#343f52]">
+                {" "}
+                Cost-Effective:{" "}
+              </span>{" "}
+              High-quality solutions at competitive prices.
+            </p>
           </div>
         </div>
-        <div className="border-2 border-blue-400 basis-1/2"></div>
+        <div className=" basis-1/2">
+          <img src="/about/office.jpeg" alt="" className="rounded-md" />
+        </div>
       </section>
       <section
         className="bg-[#edf2fc] my-36"
@@ -81,8 +107,14 @@ const About = () => {
           </div>
         </div>
       </section>
-      <section className="flex px-28 my-20">
-        <div className="basis-1/2"></div>
+      <section className="flex px-28 my-20 gap-x-8">
+        <div className="basis-1/2 content-center justify-items-center">
+          <img
+            src="/about/meeting.jpg"
+            alt=""
+            className="rounded-lg aspect-auto w-11/12"
+          />
+        </div>
         <div className="basis-1/2 text-center">
           <h2 className="text-[#343f52] font-semibold text-4xl tracking-wider">
             Convinced yet? Let's make <br /> something great together.

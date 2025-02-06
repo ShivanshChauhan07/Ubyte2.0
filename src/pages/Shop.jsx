@@ -6,7 +6,7 @@ const Shop = () => {
   return (
     <section className="font-['Manrope']">
       <div className="p-8">banner</div>
-      <div className="px-28">
+      <div className="px-28 my-10">
         {shopData.map((data) => {
           return <ShopCard key={data.id} {...data} />;
         })}

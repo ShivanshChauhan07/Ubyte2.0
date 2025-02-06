@@ -8,8 +8,10 @@ const Topbar = forwardRef((props, ref) => {
     >
       <div>
         <address className="text-nowrap cursor-pointer">
-          <i className="fa-solid fa-location-dot mx-2 text-xl "></i>
-          Faridabad, Haryana, India
+          <a href="https://www.google.com/maps/place/Ubyte+Consulting/@28.4368117,77.3102791,771m/data=!3m1!1e3!4m6!3m5!1s0x390cdd65162f74d7:0xde4107b6519e1c58!8m2!3d28.436807!4d77.312854!16s%2Fg%2F11y9hvwb13?entry=ttu&g_ep=EgoyMDI1MDIwNC4wIKXMDSoASAFQAw%3D%3D">
+            <i className="fa-solid fa-location-dot mx-2 text-xl "></i>{" "}
+            Faridabad, Haryana, India{" "}
+          </a>
         </address>
       </div>
       <div className="basis-3/4 justify-items-end mx-16">

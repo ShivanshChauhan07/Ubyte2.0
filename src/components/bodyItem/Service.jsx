@@ -42,6 +42,12 @@ const Service = () => {
   }, [logoRef, logoView]);
   return (
     <section ref={sectionRef} className=" px-28">
+      <motion.h4
+        variants={companiesChildrenVariant}
+        className="font-['Manrope'] text-[#c9cdd4] font-bold mt-32 text-center my-6"
+      >
+        OUR PARTNERS & CLIENTS
+      </motion.h4>
       <motion.div
         ref={logoRef}
         initial="hidden"
