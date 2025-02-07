@@ -78,7 +78,8 @@ const Self = () => {
           variants={whoChildVariant}
           className="text-[#343f52] font-serif font-semibold text-4xl my-4 tracking-wide leading-snug max-sm:text-3xl"
         >
-          Company that believes in the <br /> power of creative strategy.
+          Company that believes in the
+          <br className="block max-sm:hidden" /> power of creative strategy.
         </motion.h2>
         <motion.p
           variants={whoChildVariant}

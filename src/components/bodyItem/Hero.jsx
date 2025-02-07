@@ -54,7 +54,8 @@ const Hero = ({ heroHeight }) => {
             className="text-[#60697b] text-2xl font-medium leading-relaxed my-6 max-sm:text-md max-sm:text-center"
           >
             From Design, Prototyping, Testing, Validation,
-            <br /> Certifications to Production, we do it all
+            <br className="block max-sm:hidden" /> Certifications to Production,
+            we do it all
           </motion.p>
           <motion.div variants={divChildVariant}>
             <motion.button className=" bg-[#0c96d4] text-white text-lg  rounded-badge w-40 p-4 px-6 font-bold mr-3 max-sm:w-1/3 max-sm:text-base max-sm:p-2.5 max-sm:px-2 max-sm:h-12 max-sm:ml-5 ">

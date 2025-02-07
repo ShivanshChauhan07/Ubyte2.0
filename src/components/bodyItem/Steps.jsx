@@ -79,8 +79,8 @@ const Steps = () => {
             variants={worksChildVariant}
             className="text-[#60697b] font-['Manrope'] font-medium text-xl my-6"
           >
-            So here are three working steps why our <br /> valued customers
-            choose us.
+            So here are three working steps why our{" "}
+            <br className="block max-sm:hidden" /> valued customers choose us.
           </motion.p>
         </div>
         <div>
