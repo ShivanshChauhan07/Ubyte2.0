@@ -38,7 +38,7 @@ const Navbar = forwardRef((props, ref) => {
       ref={ref}
       className={` flex justify-between px-28 font-['Manrope'] font-bold  ${
         location.pathname === "/about" ? "bg-[#f6f7f9] pt-5" : "mt-5"
-      }`}
+      } max-sm:hidden`}
     >
       <div className=" basis-1/5 my-auto">
         <motion.img

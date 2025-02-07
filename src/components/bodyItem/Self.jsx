@@ -52,9 +52,9 @@ const Self = () => {
     if (selfView) control.start("visible");
   }, [selfRef, selfView]);
   return (
-    <section className="my-28 px-28 flex">
+    <section className="my-28 px-28 flex max-sm:px-5 max-sm:flex-col ">
       <motion.div
-        className="w-1/2"
+        className="w-1/2 max-sm:w-full"
         initial={{ opacity: 0, x: -50 }}
         animate={control}
         variants={imgVariant}
@@ -63,7 +63,7 @@ const Self = () => {
       </motion.div>
       <motion.div
         ref={selfRef}
-        className="w-1/2 px-10 font-['Manrope'] py-10"
+        className="w-1/2 px-10 font-['Manrope'] py-10 max-sm:w-full max-sm:px-0 max-sm:pb-0"
         initial="hidden"
         animate={control}
         variants={whoVariant}
@@ -76,20 +76,20 @@ const Self = () => {
         </motion.h4>
         <motion.h2
           variants={whoChildVariant}
-          className="text-[#343f52] font-serif font-semibold text-4xl my-4 tracking-wide leading-snug"
+          className="text-[#343f52] font-serif font-semibold text-4xl my-4 tracking-wide leading-snug max-sm:text-3xl"
         >
           Company that believes in the <br /> power of creative strategy.
         </motion.h2>
         <motion.p
           variants={whoChildVariant}
-          className="text-[#aab0bc] my-5 pr-10"
+          className="text-[#aab0bc] my-5 pr-10 max-sm:pr-0"
         >
           We provide end to end product design and manufacturing services to
           individuals and business at unbeatable prices. Backed by trust of 100+
           clients for 400+ products spread across the world, we will bring your
           idea to life. So why not give us a try.
         </motion.p>
-        <div className="text-[#aab0bc] flex">
+        <div className="text-[#aab0bc] flex max-sm:gap-1">
           <div>
             <motion.p variants={whoChildVariant} className="my-3">
               {" "}
