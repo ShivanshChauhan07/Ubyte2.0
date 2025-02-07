@@ -78,7 +78,7 @@ const About = () => {
       >
         <div className="flex px-64 pt-28">
           <div className="basis-1/2">
-            <img src="/about/pranay.png" alt="" />
+            <img src="/about/PranayPhoto.png" alt="" className="h-[31.25rem]" />
           </div>
           <div className="basis-1/2 px-12 my-auto">
             <h6 className="text-[#60697b] font-medium text-xl leading-relaxed tracking-wide">

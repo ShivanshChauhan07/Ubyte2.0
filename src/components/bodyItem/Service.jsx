@@ -115,8 +115,8 @@ const Service = () => {
           variants={companiesChildrenVariant}
           className=" text-[#343f52] text-4xl font-serif font-semibold tracking-wide leading-snug my-4 max-sm:text-3xl"
         >
-          The service we offer is specifically <br /> designed to meet your
-          needs.
+          The service we offer is specifically{" "}
+          <br className="block max-sm:hidden" /> designed to meet your needs.
         </motion.h2>
         <motion.div
           className=" my-5 flex max-sm:flex-wrap"
