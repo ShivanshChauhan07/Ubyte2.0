@@ -57,7 +57,7 @@ const Team = () => {
     if (teamView) control.start("visible");
   }, [teamRef, teamView]);
   return (
-    <section className="px-28 flex mb-28">
+    <section className="px-28 flex mb-28 max-sm:px-5 max-sm:flex-col">
       <motion.div
         className=" basis-1/3 font-['Manrope'] text-[#aab0bc] flex flex-col gap-6 "
         initial="hidden"
@@ -69,15 +69,17 @@ const Team = () => {
           <h4 className="font-bold">MEET THE TEAM</h4>
         </motion.div>
         <motion.div variants={teamChildVariant}>
-          <h1 className="font-semibold font-serif text-4xl text-[#343f52]">
-            Save your time and <br /> money by choosing our <br /> professional
+          <h1 className="font-semibold font-serif text-4xl text-[#343f52] max-sm:text-3xl">
+            Save your time and <br className="block max-sm:hidden" /> money by
+            choosing our <br className="block max-sm:hidden" /> professional
             team.
           </h1>
         </motion.div>
         <motion.div variants={teamChildVariant}>
           <p className="px-2">
-            Donec id elit non mi porta gravida at eget metus. Morbi leo risus,
-            porta ac consectetur ac, vestibulum at eros tempus porttitor.
+            With expertise in design, manufacturing, and global delivery, we
+            ensure efficient, high-quality results. Let us handle the technical
+            complexities so you can focus on growing your brand
           </p>
         </motion.div>
         <motion.div variants={teamChildVariant}>
@@ -87,7 +89,7 @@ const Team = () => {
         </motion.div>
       </motion.div>
       <motion.div
-        className=" basis-2/3 flex w-8/12 "
+        className=" basis-2/3 flex w-8/12 max-sm:w-full"
         initial="hidden"
         animate={control}
         variants={teamCarsolueVariant}
@@ -95,18 +97,18 @@ const Team = () => {
         <Swiper
           modules={[Navigation, Pagination, Autoplay, FreeMode]}
           spaceBetween={20}
-          slidesPerView={3}
+          slidesPerView={window.innerWidth > 640 ? 3 : 1}
           navigation
           pagination={{ clickable: true }}
           freeMode={true}
           autoplay={{ delay: 3500, disableOnInteraction: false }}
           speed={5000}
           loop={false}
-          className="flex-grow mx-10"
+          className="flex-grow mx-10   "
         >
           {teamData.map((item, index) => {
             return (
-              <SwiperSlide key={index} className="p-6 ">
+              <SwiperSlide key={index} className="p-6">
                 <TeamCard
                   img={item.img}
                   name={item.name}

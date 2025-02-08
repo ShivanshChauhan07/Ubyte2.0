@@ -3,13 +3,14 @@ import Body from "./components/Body/Body";
 import Navbar from "./components/Navbar/Navbar";
 import Topbar from "./components/topbar/Topbar";
 import Footer from "./components/bodyItem/Footer";
-import { Outlet } from "react-router";
+import { Outlet, useLocation } from "react-router";
 
 function App() {
   const navBarRef = useRef(null);
   const topBarRef = useRef(null);
   const [heroHeight, setHeroHeight] = useState("100vh");
   const bodyMargin = 20;
+  const location = useLocation();
 
   const adjustHeight = () => {
     if (navBarRef.current) {
@@ -44,7 +45,7 @@ function App() {
 
   return (
     <div>
-      <Topbar ref={topBarRef} />
+      {location.pathname === "/" && <Topbar ref={topBarRef} />}
       <Navbar ref={navBarRef} />
       <Outlet context={{ heroHeight }} />
       <Footer />

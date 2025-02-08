@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 import { motion } from "motion/react";
-import { Link, Links } from "react-router";
+import { Link, Links, useLocation } from "react-router";
 
 const ulVariant = {
   hidden: {
@@ -32,10 +32,13 @@ const liVariant = {
 };
 
 const Navbar = forwardRef((props, ref) => {
+  const location = useLocation();
   return (
     <nav
       ref={ref}
-      className=" flex justify-between px-28 font-['Manrope'] font-bold mt-5 "
+      className={` flex justify-between px-28 font-['Manrope'] font-bold  ${
+        location.pathname === "/about" ? "bg-[#f6f7f9] pt-5" : "mt-5"
+      } max-sm:hidden`}
     >
       <div className=" basis-1/5 my-auto">
         <motion.img
@@ -79,14 +82,15 @@ const Navbar = forwardRef((props, ref) => {
             variants={liVariant}
             className="grow text-center p-4 py-6 hover:text-[#0c96d4] hover:cursor-pointer"
           >
-            Blogs
+            <Link to={"/"}> Blogs </Link>
+
             <i className="fa-solid fa-chevron-down fa-bounce fa-xs mx-2 text-[#0c96d4]"></i>
           </motion.li>
           <motion.li
             variants={liVariant}
             className="grow text-center p-4 py-6 hover:text-[#0c96d4] hover:cursor-pointer"
           >
-            Shop
+            <Link to={"/shop"}>Shop</Link>
           </motion.li>
           <motion.li
             variants={liVariant}
@@ -109,7 +113,7 @@ const Navbar = forwardRef((props, ref) => {
           }}
           className=" bg-[#0c96d4] text-white rounded-3xl p-3 px-6 font-bold hover:shadow-lg "
         >
-          Contact
+          Contact Us
         </motion.button>
       </div>
     </nav>

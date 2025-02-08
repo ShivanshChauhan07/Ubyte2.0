@@ -5,6 +5,8 @@ import App from "../App";
 import Body from "../components/Body/Body";
 import React from "react";
 //import Error from "../pages/Error";
+import Shop from "../pages/Shop";
+import ProductPage from "../pages/ProductPage";
 const About = React.lazy(() => import("../pages/About"));
 const ProjectPage = React.lazy(() => import("../pages/ProjectPage"));
 const Error = React.lazy(() => import("../pages/Error"));
@@ -25,6 +27,14 @@ const routes = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/shop",
+        element: <Shop />,
+      },
+      {
+        path: "/shop/product/:id",
+        element: <ProductPage />,
       },
     ],
   },
