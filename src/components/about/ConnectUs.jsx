@@ -68,7 +68,15 @@ const ConnectUs = () => {
             whileInView={{ opacity: 0 }}
             transition={{ duration: 1, delay: 3 }}
           >
-            <svg width="450px" height="450px" viewBox="0 0 32.666 32.666">
+            <svg
+              width={window.innerWidth > 640 ? "450px" : "350px"}
+              height={window.innerWidth > 640 ? "450px" : "350px"}
+              viewBox={
+                window.innerWidth > 640
+                  ? "0 0 32.666 32.666"
+                  : "0 0 38.666 38.666"
+              }
+            >
               <motion.path
                 strokeWidth={0.2}
                 initial={{ pathLength: 0 }}
@@ -118,7 +126,7 @@ const ConnectUs = () => {
               name="message"
               id=""
               cols="30"
-              rows="10"
+              rows={window.innerWidth > 640 ? "10" : "5"}
               placeholder="Message"
               value={text}
               onChange={(e) => setText(e.target.value)}

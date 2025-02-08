@@ -70,7 +70,8 @@ const Team = () => {
         </motion.div>
         <motion.div variants={teamChildVariant}>
           <h1 className="font-semibold font-serif text-4xl text-[#343f52] max-sm:text-3xl">
-            Save your time and <br /> money by choosing our <br /> professional
+            Save your time and <br className="block max-sm:hidden" /> money by
+            choosing our <br className="block max-sm:hidden" /> professional
             team.
           </h1>
         </motion.div>
