@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-import ProductCarousel from "../components/productPage/ProductCarousel";
+//import ProductCarousel from "../components/productPage/ProductCarousel";
 import { useParams } from "react-router";
 import productData from "../utils/productData";
 
+const ProductCarousel = React.lazy(() =>
+  import("../components/productPage/ProductCarousel")
+);
 const ProductPage = () => {
   const { id } = useParams();
   const product = productData.filter((item) => item.id === parseInt(id))[0];
