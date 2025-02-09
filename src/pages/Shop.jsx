@@ -1,6 +1,8 @@
 import React from "react";
-import ShopCard from "../components/shop/ShopCard";
+//import ShopCard from "../components/shop/ShopCard";
 import shopData from "../utils/shopCardData";
+
+const ShopCard = React.lazy(() => import("../components/shop/ShopCard"));
 
 const Shop = () => {
   return (

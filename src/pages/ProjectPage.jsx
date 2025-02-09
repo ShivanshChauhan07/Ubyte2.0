@@ -1,6 +1,9 @@
 import React from "react";
-import ProjectCard from "../components/project/ProjectCard";
+//import ProjectCard from "../components/project/ProjectCard";
 
+const ProjectCard = React.lazy(() =>
+  import("../components/project/ProjectCard")
+);
 const ProjectPage = () => {
   return (
     <>

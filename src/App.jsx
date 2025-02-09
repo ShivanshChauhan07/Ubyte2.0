@@ -1,9 +1,11 @@
-import { useEffect, useRef, useState } from "react";
-import Body from "./components/Body/Body";
-import Navbar from "./components/Navbar/Navbar";
-import Topbar from "./components/topbar/Topbar";
-import Footer from "./components/bodyItem/Footer";
+import React, { useEffect, useRef, useState } from "react";
+//import Navbar from "./components/Navbar/Navbar";
+//import Topbar from "./components/topbar/Topbar";
+//import Footer from "./components/bodyItem/Footer";
 import { Outlet, useLocation } from "react-router";
+const Navbar = React.lazy(() => import("./components/Navbar/Navbar"));
+const Topbar = React.lazy(() => import("./components/topbar/Topbar"));
+const Footer = React.lazy(() => import("./components/bodyItem/Footer"));
 
 function App() {
   const navBarRef = useRef(null);

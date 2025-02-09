@@ -1,8 +1,9 @@
 import React from "react";
-import AboutCard from "../components/about/AboutCard";
+//import AboutCard from "../components/about/AboutCard";
 import teamData from "../utils/teamData";
-import ConnectUs from "../components/about/ConnectUs";
-
+//import ConnectUs from "../components/about/ConnectUs";
+const AboutCard = React.lazy(() => import("../components/about/AboutCard"));
+const ConnectUs = React.lazy(() => import("../components/about/ConnectUs"));
 const About = () => {
   return (
     <>
