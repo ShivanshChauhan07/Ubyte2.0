@@ -18,6 +18,7 @@ const Modal = ({ modal, setModal, counter, productName }) => {
     setFormData({ ...formData, counter });
   }, [counter]);
 
+  console.log(process.env.SERVICE);
   console.log(formData);
 
   const sendMail = async () => {
