@@ -82,7 +82,7 @@ const Navbar = forwardRef((props, ref) => {
             variants={liVariant}
             className="grow text-center p-4 py-6 hover:text-[#0c96d4] hover:cursor-pointer"
           >
-            <Link to={"/"}> Blogs </Link>
+            <Link to={"/blog"}> Blogs </Link>
 
             <i className="fa-solid fa-chevron-down fa-bounce fa-xs mx-2 text-[#0c96d4]"></i>
           </motion.li>

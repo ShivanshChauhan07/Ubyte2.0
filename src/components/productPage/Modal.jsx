@@ -25,10 +25,10 @@ const Modal = ({ modal, setModal, counter, productName }) => {
       return alert("Please Enter all fields in the form !");
 
     const response = await emailjs.send(
-      "service_hh33bdn",
+      process.env.SERVICE,
       "",
       formData,
-      "1auhrE7ATcR2TuQWN"
+      process.env.PUBLIC
     );
     console.log(response);
   };
