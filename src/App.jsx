@@ -13,7 +13,6 @@ function App() {
   const [heroHeight, setHeroHeight] = useState("100vh");
   const bodyMargin = 20;
   const location = useLocation();
-
   const adjustHeight = () => {
     if (navBarRef.current) {
       const navbarHeight = navBarRef.current.offsetHeight;

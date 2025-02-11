@@ -18,7 +18,6 @@ const Modal = ({ modal, setModal, counter, productName }) => {
     setFormData({ ...formData, counter });
   }, [counter]);
 
-  console.log(process.env.SERVICE);
   console.log(formData);
 
   const sendMail = async () => {
@@ -26,10 +25,10 @@ const Modal = ({ modal, setModal, counter, productName }) => {
       return alert("Please Enter all fields in the form !");
 
     const response = await emailjs.send(
-      process.env.SERVICE,
+      import.meta.env.VITE_SERVICE,
       "",
       formData,
-      process.env.PUBLIC
+      import.meta.env.VITE_PUBLIC
     );
     console.log(response);
   };
