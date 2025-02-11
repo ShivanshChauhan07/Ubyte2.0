@@ -1,16 +1,7 @@
 import React, { useState } from "react";
 
-const ProductCarousel = ({ selectProduct, setSelectProduct }) => {
+const ProductCarousel = ({ selectProduct, setSelectProduct, imageAdd }) => {
   const [index, setindex] = useState(0);
-  const imageAdd = [
-    "https://risingtheme.com/html/demo-furea/furea/assets/img/product/big-product2.webp",
-    "https://risingtheme.com/html/demo-furea/furea/assets/img/product/big-product3.webp",
-    "https://risingtheme.com/html/demo-furea/furea/assets/img/product/big-product4.webp",
-    "https://risingtheme.com/html/demo-furea/furea/assets/img/product/big-product5.webp",
-    "https://risingtheme.com/html/demo-furea/furea/assets/img/product/big-product3.webp",
-    "https://risingtheme.com/html/demo-furea/furea/assets/img/product/big-product4.webp",
-    "https://risingtheme.com/html/demo-furea/furea/assets/img/product/big-product5.webp",
-  ];
   const visibleImg = imageAdd.slice(index, index + 4);
   const next = () => {
     if (index < imageAdd.length - 4) {

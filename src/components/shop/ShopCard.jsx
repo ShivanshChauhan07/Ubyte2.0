@@ -1,21 +1,15 @@
 import React from "react";
 import { Link } from "react-router";
 
-const ShopCard = ({ id, name, img, price }) => {
-  console.log(name, img, price);
+const ShopCard = ({ id, name, img, desc, price }) => {
   return (
-    <div className="border-2 border-slate-100 flex ">
+    <div className="border-2 border-slate-100 flex  ">
       <div className="border-r border-slate-100 basis-3/4 p-6">
         <div className="flex items-center gap-x-4">
           <img src={img} alt="" className="w-1/5 rounded-md" />
           <div>
             <h3 className="font-semibold text-xl py-4">{name}</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-              deleniti quibusdam doloribus placeat voluptatibus, explicabo
-              molestiae ex consequatur similique odit, aperiam sed, quod
-              voluptas eveniet hic! Numquam hic libero placeat!
-            </p>
+            <p>{desc}</p>
           </div>
         </div>
       </div>

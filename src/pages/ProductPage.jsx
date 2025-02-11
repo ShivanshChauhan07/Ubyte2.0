@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 //import ProductCarousel from "../components/productPage/ProductCarousel";
 import { useParams } from "react-router";
 import productData from "../utils/productData";
+import ProductFeatures from "../components/productPage/ProductFeatures";
+import PdfViewer from "../components/productPage/PdfViewer";
+import Modal from "../components/productPage/Modal";
 
 const ProductCarousel = React.lazy(() =>
   import("../components/productPage/ProductCarousel")
@@ -11,31 +14,48 @@ const ProductPage = () => {
   const product = productData.filter((item) => item.id === parseInt(id))[0];
   const [counter, setCounter] = useState(0);
   const [selection, setSelection] = useState(0);
+  const [modal, setModal] = useState(false);
   const [selectProduct, setSelectProduct] = useState(product.img);
+
+  console.log(counter);
+  useEffect(() => {
+    if (modal) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [modal]);
 
   return (
     <>
-      <section className="flex px-28 mt-4 gap-x-4 font-['Manrope']">
+      <section className={`flex px-28 mt-8 gap-x-4 font-['Manrope']`}>
+        <div>
+          <Modal
+            modal={modal}
+            setModal={setModal}
+            counter={counter}
+            productName={product.name}
+          />
+        </div>
         <div className="basis-1/2">
-          <img src={selectProduct} alt="" className="w-full h-3/4" />
+          <img src={selectProduct} alt="" className="w-full h-[472px]" />
           <ProductCarousel
             selectProduct={selectProduct}
             setSelectProduct={setSelectProduct}
+            imageAdd={product.images}
           />
         </div>
         <div className="basis-1/2">
           <div className="flex flex-col gap-y-3">
             <h3 className="text-3xl font-semibold text-[#343f52]">
-              Larger Minimal Wooden Chair
+              {product?.name}
             </h3>
             <p className="text-[#0c96d4] font-semibold text-xl">
-              ${product.price}
+              ${product?.price}
             </p>
             <p>⭐⭐⭐⭐⭐</p>
-            <p className="text-[#60697b]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-              deleniti quibusdam doloribus placeat voluptat
-            </p>
+            <p className="text-[#60697b]">{product.shortDesc}</p>
             <div className="my-3">
               <span
                 className="bg-[#f5f5f5] p-2 text-xl font-semibold rounded-l-full select-none hover:cursor-pointer"
@@ -45,7 +65,12 @@ const ProductPage = () => {
               >
                 -
               </span>
-              <input className="w-10 text-center" type="text" value={counter} />
+              <input
+                className="w-10 text-center"
+                type="text"
+                value={counter}
+                readOnly={true}
+              />
               <span
                 className="bg-[#f5f5f5] p-2 text-xl font-semibold rounded-r-full select-none hover:cursor-pointer"
                 onClick={() => setCounter(counter + 1)}
@@ -53,7 +78,13 @@ const ProductPage = () => {
                 +
               </span>
             </div>
-            <button className="bg-[#0c96d4] text-white font-medium w-3/4 p-3 rounded-sm my-4 hover:bg-[#327493] hover:text-white">
+            <button
+              className="bg-[#0c96d4] text-white font-medium w-3/4 p-3 rounded-sm my-4 select-none hover:bg-[#327493] hover:text-white"
+              onClick={() => {
+                if (counter > 0) setModal(!modal);
+                else alert("Please Select Your Quantity First !");
+              }}
+            >
               Send Your Demand
             </button>
             <div>
@@ -64,10 +95,10 @@ const ProductPage = () => {
                 <span className="font-semibold">Sky:</span> 4420
               </h3>
               <h3 className="text-[#666666] my-2 ">
-                <span className="font-semibold">Vendor:</span> Belo
+                <span className="font-semibold">Vendor:</span> Ubyte
               </h3>
               <h3 className="text-[#666666] my-2">
-                <span className="font-semibold">Type:</span> Sofa
+                <span className="font-semibold">Type:</span> PCB
               </h3>
             </div>
             <h4>Also CheckOut On </h4>
@@ -92,7 +123,7 @@ const ProductPage = () => {
           </div>
         </div>
       </section>
-      <section className="bg-[#f7f8fc] px-28">
+      <section className="bg-[#f7f8fc] px-28 my-10">
         <div className="flex justify-around p-4">
           <h2
             className={`decoration-[#2d83ab] font-semibold text-lg ${
@@ -108,7 +139,7 @@ const ProductPage = () => {
             } hover:cursor-pointer  hover:text-[#0c96d4] hover:underline hover:underline-offset-4 `}
             onClick={() => setSelection(1)}
           >
-            Product Reviews
+            Additional Info
           </h2>
           <h2
             className={`decoration-[#2d83ab] font-semibold text-lg ${
@@ -116,7 +147,7 @@ const ProductPage = () => {
             } hover:cursor-pointer hover:text-[#0c96d4] hover:underline hover:underline-offset-4 `}
             onClick={() => setSelection(2)}
           >
-            Additional Info
+            Video Tutorial
           </h2>
           <h2
             className={`decoration-[#2d83ab] font-semibold text-lg ${
@@ -124,51 +155,27 @@ const ProductPage = () => {
             } hover:cursor-pointer hover:text-[#0c96d4] hover:underline hover:underline-offset-4 `}
             onClick={() => setSelection(3)}
           >
-            Custom Content
+            Product Reviews
           </h2>
         </div>
         <div>
           <div className={selection === 0 ? "p-4" : "hidden"}>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-              deleniti quibusdam doloribus placeat voluptat1 Lorem ipsum dolor
-              sit amet consectetur adipisicing elit. Temporibus tempora placeat
-              nobis atque suscipit qui sunt? Beatae quod repellendus eius
-              nesciunt, pariatur libero veniam voluptatum quas minima laudantium
-              porro dolores. Esse laudantium corrupti incidunt provident
-              consequatur nesciunt nam reprehenderit, nostrum odio alias
-              distinctio sit quasi nemo totam eius tempora tenetur. Laudantium
-              quo accusantium unde quos debitis quaerat earum alias mollitia!
-              Aliquid ducimus nesciunt natus facilis quam, asperiores rem
-              doloribus dolorum non perspiciatis ipsam ut harum impedit ullam a
-              libero vero deleniti eligendi. In nisi quos iste possimus deserunt
-              dolores odio. Nulla magnam, officiis sed quia totam sit quidem
-              unde placeat deserunt! Molestiae animi culpa obcaecati voluptate
-              voluptatibus, delectus rem ad, aut impedit, commodi sapiente
-              deleniti? Facere, fuga dolorum. Officiis, amet! Temporibus dolor
-              rem quae exercitationem aliquam praesentium odio deserunt sapiente
-              animi ex facere non delectus quis aperiam dolore aliquid facilis
-              eaque laboriosam, eligendi eius tenetur quam consequuntur sequi!
-              Esse, non. Error, accusantium libero sapiente recusandae incidunt,
-              obcaecati harum quidem modi quaerat cum similique amet, est totam?
-              Nemo vel iusto porro vitae nam, non molestiae quae inventore
-              placeat, nisi ea quaerat.
+            <ProductFeatures feature={product?.desc?.features} />
+            <p className="font-semibold text-2xl font-['Manrope'] text-[#0c96d4] text-center my-6">
+              {product.endDesc}
             </p>
           </div>
-          <div
-            className={selection === 1 ? "border-2 border-[#8597e0]" : "hidden"}
-          >
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-              deleniti quibusdam doloribus placeat voluptat2
+          <div className={selection === 1 ? "p-4" : "hidden"}>
+            <PdfViewer source={product.pdf} />
+          </div>
+          <div className={selection === 2 ? "p-4" : "hidden"}>
+            <p className="font-semibold text-2xl font-['Manrope'] text-[#0c96d4] text-center my-6">
+              Coming soon: Innovations that redefine awesome!
             </p>
           </div>
-          <div
-            className={selection === 2 ? "border-2 border-[#8597e0]" : "hidden"}
-          >
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-              deleniti quibusdam doloribus placeat voluptat3
+          <div className={selection === 3 ? "p-4" : "hidden"}>
+            <p className="font-semibold text-2xl font-['Manrope'] text-[#0c96d4] text-center my-6">
+              Ready for Some Positive Vibes 😍
             </p>
           </div>
         </div>

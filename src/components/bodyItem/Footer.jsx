@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="basis-1/4">
           <img src="/logo.png" alt="logo" className="w-[98px] h-16" />
           <p className="my-6">
-            © 2024 Sandbox. <br />
+            © 2025 Ubyte. <br />
             All rights reserved.
           </p>
         </div>

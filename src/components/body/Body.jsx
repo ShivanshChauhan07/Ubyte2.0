@@ -8,7 +8,6 @@ import Self from "../bodyItem/Self";
 import Team from "../bodyItem/Team";
 
 const Body = ({ heroHeight }) => {
-  console.log(heroHeight);
   return (
     <>
       <Hero heroHeight={heroHeight} />;

@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 import { motion } from "motion/react";
-import { Link, Links, useLocation } from "react-router";
+import { Link, useLocation } from "react-router";
 
 const ulVariant = {
   hidden: {

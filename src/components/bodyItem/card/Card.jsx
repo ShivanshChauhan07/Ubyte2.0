@@ -1,4 +1,3 @@
-import React, { Children } from "react";
 import { motion } from "motion/react";
 
 const Card = ({ logo, heading, info, variant }) => {
