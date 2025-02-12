@@ -8,6 +8,7 @@ import Loading from "../pages/Loading";
 //import Error from "../pages/Error";
 //import Shop from "../pages/Shop";
 //import ProductPage from "../pages/ProductPage";
+//import { Blog } from "../pages/Blog";
 const App = React.lazy(() => import("../App"));
 const Body = React.lazy(() => import("../components/Body/Body"));
 const Shop = React.lazy(() => import("../pages/Shop"));
@@ -15,7 +16,7 @@ const ProductPage = React.lazy(() => import("../pages/ProductPage"));
 const About = React.lazy(() => import("../pages/About"));
 const ProjectPage = React.lazy(() => import("../pages/ProjectPage"));
 const Error = React.lazy(() => import("../pages/Error"));
-
+const Blog = React.lazy(() => import("../pages/Blog"));
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -64,6 +65,10 @@ const routes = createBrowserRouter([
             <ProductPage />
           </Suspense>
         ),
+      },
+      {
+        path: "/blog",
+        element: <Blog />,
       },
     ],
   },

@@ -18,19 +18,16 @@ const Modal = ({ modal, setModal, counter, productName }) => {
     setFormData({ ...formData, counter });
   }, [counter]);
 
-  console.log(formData);
-
   const sendMail = async () => {
     if (!formData.name || !formData.email || !formData.contact)
       return alert("Please Enter all fields in the form !");
 
     const response = await emailjs.send(
-      "service_hh33bdn",
+      import.meta.env.VITE_SERVICE,
       "",
       formData,
-      "1auhrE7ATcR2TuQWN"
+      import.meta.env.VITE_PUBLIC
     );
-    console.log(response);
   };
 
   const handleChange = (e) => {
