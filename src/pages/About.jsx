@@ -1,11 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 //import AboutCard from "../components/about/AboutCard";
-import teamData from "../utils/teamData";
+import aboutTeamData from "../utils/aboutTeamData";
+import Loading from "./Loading";
 //import ConnectUs from "../components/about/ConnectUs";
 const AboutCard = React.lazy(() => import("../components/about/AboutCard"));
 const ConnectUs = React.lazy(() => import("../components/about/ConnectUs"));
 const About = () => {
-  return (
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const itemsPerPage = 3;
+  const totalItems = aboutTeamData.length;
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, [500]);
+  }, []);
+
+  const nextSlide = () => {
+    if (currentIndex + itemsPerPage < totalItems) {
+      setCurrentIndex((prevIndex) => prevIndex + itemsPerPage);
+    }
+  };
+
+  const prevSlide = () => {
+    if (currentIndex - itemsPerPage >= 0) {
+      setCurrentIndex((prevIndex) => prevIndex - itemsPerPage);
+    }
+  };
+  return isLoading ? (
+    <Loading />
+  ) : (
     <>
       <section className=" max-sm:px-5">
         <div className="text-center leading-loose p-2 bg-[#f6f7f9] font-['Manrope']  ">
@@ -101,12 +126,28 @@ const About = () => {
             choosing our professional team.
           </h1>
         </div>
-        <div className="flex justify-center">
-          <div className="carousel carousel-center rounded-box w-[100%] space-x-4 py-4 cursor-grab ma">
-            {teamData.map((card, index) => (
-              <AboutCard key={index} card={card} />
-            ))}
+        <div className="relative flex justify-center">
+          <div className="carousel rounded-box w-[100%] py-4 ">
+            <div className="grid grid-cols-3 gap-4 mx-auto">
+              {aboutTeamData
+                .slice(currentIndex, currentIndex + itemsPerPage)
+                .map((card, index) => (
+                  <AboutCard key={index} card={card} />
+                ))}
+            </div>
           </div>
+          <button
+            onClick={prevSlide}
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-[#0c96d4] w-16 h-16 text-white text-xl font-semibold p-2 rounded-full"
+          >
+            ❮
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#0c96d4] w-16 h-16 text-white text-xl font-semibold p-2 rounded-full"
+          >
+            ❯
+          </button>
         </div>
       </section>
       <section className="flex px-28 my-20 gap-x-8 max-sm:px-5 max-sm:flex-col">

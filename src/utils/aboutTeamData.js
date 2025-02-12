@@ -1,4 +1,4 @@
-const teamData = [
+const aboutTeamData = [
   {
     img: "/about/PranaySharma.png",
     name: "Pranay Sharma",
@@ -32,6 +32,14 @@ const teamData = [
     contact: "lakshya.sharma@ubyte.in",
   },
   {
+    img: "/about/HimanshuChandel.JPG",
+    name: " Himanshu Chandel",
+    role: "Hardware Design Engineer",
+    desc: "",
+    social: "https://www.linkedin.com/in/himanshu-chandel-015287235/ ",
+    contact: "himanshu.chandel@ubyte.in",
+  },
+  {
     img: "/about/LakshyaSharma.jpg",
     name: "Rohit Maurya",
     role: "Full Stack Developer",
@@ -39,6 +47,22 @@ const teamData = [
     social: "https://www.linkedin.com/in/rohit-maurya-3b7a43214/",
     contact: "rohit@ubyte.in",
   },
+  {
+    img: "/about/AshaSharma.png",
+    name: "Asha Sharma",
+    role: "CEO | Customer Relationship Manager",
+    desc: "Expertise in customer relationship management and ensuring seamless project execution and timely delivery to clients.",
+    social: "https://www.linkedin.com/in/asha-sharma-88b94b33a/ ",
+    contact: " asha@ubyte.in",
+  },
+  {
+    img: "/about/LalitMohan.jpg",
+    name: "Lalit Mohan",
+    role: "CFO | Accounts Manager",
+    desc: " With over 26 years of experience in accounting and financial management, he specializes in finalizing accounts.",
+    social: "https://www.linkedin.com/in/lalit-mohan-41aa26201/ ",
+    contact: "lalit.sharma@ubyte.in",
+  },
 ];
 
-export default teamData;
+export default aboutTeamData;

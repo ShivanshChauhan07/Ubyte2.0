@@ -10,8 +10,12 @@ const AboutCard = ({ card }) => {
         <div className="card-body text-center">
           <h2 className="card-title mx-auto">{card.name}</h2>
           <h4>{card.role}</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing el</p>
-          <div className="card-actions ">logo</div>
+          <p>{card.desc}</p>
+          <div className="card-actions  ">
+            <a href={card.social} className="mx-auto">
+              <i className="fa-brands fa-linkedin text-[#0c96d4]"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>
