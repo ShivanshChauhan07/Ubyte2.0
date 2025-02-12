@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const ProjectCard = ({ inverted = false }) => {
+const ProjectCard = ({ inverted, img, name, shortDesc }) => {
   const cardRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -17,7 +17,7 @@ const ProjectCard = ({ inverted = false }) => {
         inverted ? "flex-row-reverse" : "flex-row"
       } items-center w-3/4 mx-auto my-16`}
     >
-      <img src="/project/p1.png" alt="Project" className="rounded-xl w-3/5" />
+      <img src={img} alt="Project" className="rounded-xl w-3/5" />
 
       <motion.div
         ref={cardRef}
@@ -27,14 +27,11 @@ const ProjectCard = ({ inverted = false }) => {
         style={{ translateY }}
       >
         <div>
-          <h1 className="text-sm uppercase text-gray-500">Cosmetic</h1>
+          <h1 className="text-sm uppercase text-gray-500">PCB Board</h1>
         </div>
         <div>
-          <h1 className="text-xl font-semibold mb-4">Heading of the Project</h1>
-          <p className="text-gray-600">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-            commodi pariatur atque accusantium, optio
-          </p>
+          <h1 className="text-xl font-semibold mb-4">{name}</h1>
+          <p className="text-gray-600">{shortDesc}</p>
         </div>
         <div>
           <button className="mt-4 px-4 py-2 bg-[#0c96d4] text-white rounded-lg hover:bg-blue-600">

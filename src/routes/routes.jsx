@@ -3,7 +3,8 @@ import { createBrowserRouter } from "react-router";
 //import ProjectPage from "../pages/ProjectPage";
 //import App from "../App";
 //import Body from "../components/Body/Body";
-import React from "react";
+import React, { Suspense } from "react";
+import Loading from "../pages/Loading";
 //import Error from "../pages/Error";
 //import Shop from "../pages/Shop";
 //import ProductPage from "../pages/ProductPage";
@@ -18,27 +19,51 @@ const Error = React.lazy(() => import("../pages/Error"));
 const routes = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <App />
+      </Suspense>
+    ),
     children: [
       {
         path: "/",
-        element: <Body />,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Body />
+          </Suspense>
+        ),
       },
       {
         path: "/project",
-        element: <ProjectPage />,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <ProjectPage />
+          </Suspense>
+        ),
       },
       {
         path: "/about",
-        element: <About />,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <About />
+          </Suspense>
+        ),
       },
       {
         path: "/shop",
-        element: <Shop />,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Shop />
+          </Suspense>
+        ),
       },
       {
         path: "/shop/product/:id",
-        element: <ProductPage />,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <ProductPage />
+          </Suspense>
+        ),
       },
     ],
   },

@@ -5,6 +5,7 @@ import productData from "../utils/productData";
 import ProductFeatures from "../components/productPage/ProductFeatures";
 import PdfViewer from "../components/productPage/PdfViewer";
 import Modal from "../components/productPage/Modal";
+import Loading from "./Loading";
 
 const ProductCarousel = React.lazy(() =>
   import("../components/productPage/ProductCarousel")
@@ -16,8 +17,14 @@ const ProductPage = () => {
   const [selection, setSelection] = useState(0);
   const [modal, setModal] = useState(false);
   const [selectProduct, setSelectProduct] = useState(product.img);
+  const [isLoading, setIsLoading] = useState(true);
 
-  console.log(counter);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, [500]);
+  }, []);
+
   useEffect(() => {
     if (modal) document.body.style.overflow = "hidden";
     else document.body.style.overflow = "";
@@ -27,7 +34,9 @@ const ProductPage = () => {
     };
   }, [modal]);
 
-  return (
+  return isLoading ? (
+    <Loading />
+  ) : (
     <>
       <section className={`flex px-28 mt-8 gap-x-4 font-['Manrope']`}>
         <div>

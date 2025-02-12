@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 //import Navbar from "./components/Navbar/Navbar";
 //import Topbar from "./components/topbar/Topbar";
 //import Footer from "./components/bodyItem/Footer";
 import { Outlet, useLocation } from "react-router";
+import Loading from "./pages/Loading";
 const Navbar = React.lazy(() => import("./components/Navbar/Navbar"));
 const Topbar = React.lazy(() => import("./components/topbar/Topbar"));
 const Footer = React.lazy(() => import("./components/bodyItem/Footer"));
@@ -13,6 +14,13 @@ function App() {
   const [heroHeight, setHeroHeight] = useState("100vh");
   const bodyMargin = 20;
   const location = useLocation();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, [500]);
+  }, []);
 
   const adjustHeight = () => {
     if (navBarRef.current) {
@@ -45,12 +53,16 @@ function App() {
     return () => window.removeEventListener("resize", adjustHeight);
   }, []);
 
-  return (
+  return isLoading ? (
+    <Loading />
+  ) : (
     <div>
-      {location.pathname === "/" && <Topbar ref={topBarRef} />}
-      <Navbar ref={navBarRef} />
-      <Outlet context={{ heroHeight }} />
-      <Footer />
+      <Suspense fallback={<Loading />}>
+        {location.pathname === "/" && <Topbar ref={topBarRef} />}
+        <Navbar ref={navBarRef} />
+        <Outlet context={{ heroHeight }} />
+        <Footer />
+      </Suspense>
     </div>
   );
 }
