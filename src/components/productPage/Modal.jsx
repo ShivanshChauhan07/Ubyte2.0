@@ -18,8 +18,6 @@ const Modal = ({ modal, setModal, counter, productName }) => {
     setFormData({ ...formData, counter });
   }, [counter]);
 
-  console.log(formData);
-
   const sendMail = async () => {
     if (!formData.name || !formData.email || !formData.contact)
       return alert("Please Enter all fields in the form !");
@@ -30,7 +28,6 @@ const Modal = ({ modal, setModal, counter, productName }) => {
       formData,
       import.meta.env.VITE_PUBLIC
     );
-    console.log(response);
   };
 
   const handleChange = (e) => {
