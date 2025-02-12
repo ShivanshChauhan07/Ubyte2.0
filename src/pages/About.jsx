@@ -128,7 +128,7 @@ const About = () => {
         </div>
         <div className="relative flex justify-center">
           <div className="carousel rounded-box w-[100%] py-4 ">
-            <div className="grid grid-cols-3 gap-4 mx-auto">
+            <div className="grid grid-cols-3 gap-4 mx-auto max-sm:flex max-sm:flex-row max-sm:gap-2 ">
               {aboutTeamData
                 .slice(currentIndex, currentIndex + itemsPerPage)
                 .map((card, index) => (
