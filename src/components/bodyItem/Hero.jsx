@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
+import { Link } from "react-router";
 
 const heroDivVariant = {
   hidden: {
@@ -59,10 +60,10 @@ const Hero = ({ heroHeight }) => {
           </motion.p>
           <motion.div variants={divChildVariant}>
             <motion.button className=" bg-[#0c96d4] text-white text-lg  rounded-badge w-40 p-4 px-6 font-bold mr-3 max-sm:w-1/3 max-sm:text-base max-sm:p-2.5 max-sm:px-2 max-sm:h-12 max-sm:ml-5 ">
-              Explore Now
+              <Link to={"/about"}>Explore Now</Link>
             </motion.button>
             <motion.button className="border-2 border-[#0c96d4] text-[#0c96d4] text-lg w-56 rounded-badge p-3 px-6 font-bold hover:bg-[#0c96d4] hover:text-white max-sm:w-1/2 max-sm:text-base max-sm:p-2 max-sm:px-2 max-sm:h-12 ">
-              Meet Our Experts
+              <Link to={"/about"}> Meet Our Experts </Link>
             </motion.button>
           </motion.div>
         </motion.div>

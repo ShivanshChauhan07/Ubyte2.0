@@ -3,10 +3,10 @@ import { Link } from "react-router";
 
 const ShopCard = ({ id, name, img, desc, price }) => {
   return (
-    <div className="border-2 border-slate-100 flex  ">
+    <div className="border-2 border-slate-100 flex max-sm:block max-sm:w-fit ">
       <div className="border-r border-slate-100 basis-3/4 p-6">
-        <div className="flex items-center gap-x-4">
-          <img src={img} alt="" className="w-1/5 rounded-md" />
+        <div className="flex items-center gap-x-4 max-sm:block ">
+          <img src={img} alt="" className="w-1/5 rounded-md max-sm:w-full" />
           <div>
             <h3 className="font-semibold text-xl py-4">{name}</h3>
             <p>{desc}</p>

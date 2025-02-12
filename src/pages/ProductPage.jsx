@@ -26,11 +26,26 @@ const ProductPage = () => {
   }, []);
 
   useEffect(() => {
-    if (modal) document.body.style.overflow = "hidden";
-    else document.body.style.overflow = "";
+    const backElement = document.querySelector("#back");
+    const btn = document.querySelector(".btn");
+    if (!backElement) {
+      console.warn("Element with id 'back' not found!"); // Debugging log
+      return;
+    }
+    if (modal) {
+      document.body.style.overflow = "hidden";
+      backElement.style.pointerEvents = "none";
+      btn.style.pointerEvents = "none";
+    } else {
+      document.body.style.overflow = "";
+      backElement.style.pointerEvents = "auto";
+      btn.style.pointerEvents = "auto";
+    }
 
     return () => {
       document.body.style.overflow = "";
+      backElement.style.pointerEvents = "auto";
+      btn.style.pointerEvents = "auto";
     };
   }, [modal]);
 
@@ -38,7 +53,9 @@ const ProductPage = () => {
     <Loading />
   ) : (
     <>
-      <section className={`flex px-28 mt-8 gap-x-4 font-['Manrope']`}>
+      <section
+        className={`flex px-28 mt-8 gap-x-4 font-['Manrope'] max-sm:block max-sm:px-2`}
+      >
         <div>
           <Modal
             modal={modal}
@@ -47,15 +64,19 @@ const ProductPage = () => {
             productName={product.name}
           />
         </div>
-        <div className="basis-1/2">
-          <img src={selectProduct} alt="" className="w-full h-[472px]" />
+        <div className="basis-1/2" id="back">
+          <img
+            src={selectProduct}
+            alt=""
+            className="w-full h-[472px] max-sm:h-3/4"
+          />
           <ProductCarousel
             selectProduct={selectProduct}
             setSelectProduct={setSelectProduct}
             imageAdd={product.images}
           />
         </div>
-        <div className="basis-1/2">
+        <div className="basis-1/2" id="back">
           <div className="flex flex-col gap-y-3">
             <h3 className="text-3xl font-semibold text-[#343f52]">
               {product?.name}
@@ -88,7 +109,7 @@ const ProductPage = () => {
               </span>
             </div>
             <button
-              className="bg-[#0c96d4] text-white font-medium w-3/4 p-3 rounded-sm my-4 select-none hover:bg-[#327493] hover:text-white"
+              className="btn bg-[#0c96d4] text-white font-medium w-3/4 p-3 rounded-sm my-4 select-none hover:bg-[#327493] hover:text-white"
               onClick={() => {
                 if (counter > 0) setModal(!modal);
                 else alert("Please Select Your Quantity First !");
@@ -132,8 +153,8 @@ const ProductPage = () => {
           </div>
         </div>
       </section>
-      <section className="bg-[#f7f8fc] px-28 my-10">
-        <div className="flex justify-around p-4">
+      <section className="bg-[#f7f8fc] px-28 my-10 max-sm:px-2">
+        <div className="flex justify-around p-4 max-sm:gap-x-4">
           <h2
             className={`decoration-[#2d83ab] font-semibold text-lg ${
               selection == 0 && "text-[#0c96d4] underline underline-offset-4"

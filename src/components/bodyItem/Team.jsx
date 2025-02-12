@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import teamData from "../../utils/teamData";
 import TeamCard from "./card/TeamCard";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -52,9 +52,17 @@ const Team = () => {
   const teamRef = useRef(null);
   const teamView = useInView(teamRef, { once: true, amount: 0.5 });
   const control = useAnimation();
+  const [play, setPlay] = useState(false);
+
+  console.log(play);
 
   useEffect(() => {
-    if (teamView) control.start("visible");
+    if (teamView) {
+      control.start("visible");
+      setTimeout(() => {
+        setPlay(true);
+      }, 5000);
+    }
   }, [teamRef, teamView]);
   return (
     <section className="px-28 flex mb-28 max-sm:px-5 max-sm:flex-col">
@@ -95,15 +103,17 @@ const Team = () => {
         variants={teamCarsolueVariant}
       >
         <Swiper
+          key={play}
           modules={[Navigation, Pagination, Autoplay, FreeMode]}
           spaceBetween={20}
           slidesPerView={window.innerWidth > 640 ? 3 : 1}
           navigation
           pagination={{ clickable: true }}
-          freeMode={true}
-          autoplay={{ delay: 3500, disableOnInteraction: false }}
-          speed={5000}
-          loop={false}
+          freeMode={false}
+          autoplay={play ? { delay: 1000, disableOnInteraction: false } : false}
+          speed={2500}
+          loop={true}
+          initialSlide={0}
           className="flex-grow mx-10   "
         >
           {teamData.map((item, index) => {

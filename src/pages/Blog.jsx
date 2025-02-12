@@ -6,7 +6,7 @@ const Blog = () => {
       <h1 className="text-2xl max-sm:text-xl max-sm:text-center">
         This page is under fabrication we will live it soon{" "}
       </h1>
-      <img src="blog/Coming Soon.jpg" className="h-3/4 w-1/4 max-sm:w-2/3" />
+      <img src="blog/ComingSoon.jpg" className="h-3/4 w-1/4 max-sm:w-2/3" />
     </section>
   );
 };

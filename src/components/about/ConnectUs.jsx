@@ -1,8 +1,9 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { motion, useInView } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import "../../utils/contact.scss";
+import { useNavigate } from "react-router";
 
 const variant = {
   initial: {
@@ -24,38 +25,39 @@ const variant = {
   },
 };
 const ConnectUs = () => {
+  const navigate = useNavigate();
   const ref = useRef(null);
   const formRef = useRef(null);
   const isInView = useInView(ref, { margin: "800px 100px -550px 0px" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    text: "",
+  });
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [text, setText] = useState("");
-  const sendEmail = (e) => {
-    e.preventDefault();
 
-    emailjs
-      .sendForm(
-        import.meta.env.VITE_SERVICE_ID,
-        import.meta.env.VITE_TEMPLATE_ID,
-        formRef.current,
-        {
-          publicKey: import.meta.env.VITE_PUBLIC_KEY,
-        }
-      )
-      .then(
-        () => {
-          console.log("SUCCESS!");
-          setName("");
-          setEmail("");
-          setText("");
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-          setName("");
-          setEmail("");
-          setText("");
-        }
+  useEffect(() => {
+    setFormData({ name: name, email: email, text: text });
+  }, [name, email, text]);
+  const sendMail = async () => {
+    if (!formData.name || !formData.email || !formData.text) {
+      return alert("Please Enter all fields in the form !");
+    }
+
+    try {
+      const response = await emailjs.send(
+        import.meta.env.VITE_SERVICE2,
+        import.meta.env.VITE_TEMPLATE2,
+        formData,
+        import.meta.env.VITE_PUBLIC2
       );
+      console.log(response);
+    } catch (error) {
+      alert("Something went wrong");
+      console.log(error.message);
+    }
   };
 
   return (
@@ -104,7 +106,10 @@ const ConnectUs = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1, delay: 4 }}
             ref={formRef}
-            onSubmit={sendEmail}
+            className="text-black"
+            onSubmit={(e) => {
+              e.preventDefault();
+            }}
           >
             <input
               type="text"
@@ -131,7 +136,20 @@ const ConnectUs = () => {
               value={text}
               onChange={(e) => setText(e.target.value)}
             ></textarea>
-            <button type="submit">Submit</button>
+            <button
+              type="submit"
+              onClick={() => {
+                setTimeout(() => {
+                  sendMail();
+                  navigate("/");
+                  alert(
+                    "Your Inquiry sent successfully ! , We will get back to you Shortly !"
+                  );
+                }, 2000);
+              }}
+            >
+              Submit
+            </button>
           </motion.form>
         </div>
       </div>

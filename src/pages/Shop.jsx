@@ -18,12 +18,16 @@ const Shop = () => {
   ) : (
     <section className="font-['Manrope']">
       <div className="relative py-4 my-4 w-full h-72 ">
-        <p className="absolute left-[35rem] top-1/3 text-white font-bold text-6xl select-none ">
+        <p className="absolute left-[35rem] top-1/3 text-white font-bold text-6xl select-none max-sm:left-1/4 max-sm:text-3xl">
           Shop With Us
         </p>
-        <img src="/shop/banner.jpg" alt="" className="w-full h-full" />
+        <img
+          src="/shop/banner.jpg"
+          alt=""
+          className="w-full h-full max-sm:h-4/6"
+        />
       </div>
-      <div className="px-28 my-6 flex flex-col gap-y-10">
+      <div className="px-28 my-6 flex flex-col gap-y-10 max-sm:px-2">
         {shopData.map((data) => {
           return <ShopCard key={data.id} {...data} />;
         })}

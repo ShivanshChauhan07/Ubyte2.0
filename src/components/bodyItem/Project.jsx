@@ -1,6 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "motion/react";
 import projectData from "../../utils/projectData";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay, FreeMode } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const projectVariant = {
   hidden: {
@@ -59,15 +64,24 @@ const Project = () => {
         Check out some of our awesome projects <br /> with creative ideas and
         great design.
       </motion.h2>
-      <div className="carousel carousel-center bg-white rounded-box w-full space-x-4 p-4 max-sm:w-11/12 max-sm:p-2 max-sm:mt-4">
-        {projectData.map((data, index) => {
-          return (
-            <div key={index} className="carousel-item w-1/3 max-sm:w-full">
-              <img src={data.img} className="rounded-box w-full h-80" />
-            </div>
-          );
-        })}
-      </div>
+      <Swiper
+        modules={[Navigation, Pagination]}
+        spaceBetween={20}
+        slidesPerView={window.innerWidth > 640 ? 3 : 1}
+        navigation
+        pagination={{ clickable: true }}
+        className="flex-grow mx-10   "
+      >
+        <div className=" rounded-box w-full space-x-4 p-4 max-sm:w-11/12 max-sm:p-2 max-sm:mt-4">
+          {projectData.map((data, index) => {
+            return (
+              <SwiperSlide key={index} className="p-6">
+                <img src={data.img} className="rounded-box w-full h-80" />
+              </SwiperSlide>
+            );
+          })}
+        </div>
+      </Swiper>
     </motion.section>
   );
 };
