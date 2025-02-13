@@ -32,14 +32,8 @@ const productData = [
           title: "Power & Voltage Management",
           desc: [
             "Operating Voltage: 3.3V",
-            {
-              "Power Input Options:": [
-                "USB Type-C (5V) – Primary power source",
-                "5V Expansion Header – Secondary power source",
-              ],
-            },
+            "Power Input Options: USB Type-C (5V) – Primary power source , 5V Expansion Header – Secondary power source",
             "Power Regulation: Integrated voltage regulators for stable operation",
-            ,
             "Low-Power Modes: Supports multiple power-saving modes for battery-operated applications",
           ],
         },

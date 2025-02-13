@@ -1,6 +1,7 @@
 import React, { forwardRef, useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { Link, useLocation } from "react-router";
+import { HashLink } from "react-router-hash-link";
 
 const ulVariant = {
   hidden: {
@@ -152,7 +153,9 @@ const Navbar = forwardRef((props, ref) => {
             }}
             className=" bg-[#0c96d4] text-white rounded-3xl p-3 px-6 font-bold hover:shadow-lg max-sm:hidden "
           >
-            <Link to={"/about"}>Contact Us</Link>
+            <HashLink to={"/about#contactForm"} smooth>
+              Contact Us
+            </HashLink>
           </motion.button>
         </div>
       </div>

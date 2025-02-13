@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const Footer = () => {
   return (
@@ -7,14 +9,14 @@ const Footer = () => {
         <div className="basis-1/4">
           <img src="/logo.png" alt="logo" className="w-[98px] h-16" />
           <p className="my-6">
-            © 2025 Ubyte. <br />
+            © 2025 Ubyte Consulting. <br />
             All rights reserved.
           </p>
         </div>
         <div className="basis-1/4 px-4 max-sm:px-0">
           <h6 className="text-lg text-[#343f52] font-bold">Get in Touch</h6>
           <address className="pr-7 my-2 leading-relaxed">
-            UByte Consulting <br /> 2181, Sector 28 HB Colony,
+            Ubyte Consulting <br /> 2181, Sector 28 HB Colony,
             <br /> Faridabad, Haryana - 121008
           </address>
           <p className="my-3">
@@ -25,9 +27,17 @@ const Footer = () => {
         <div className="basis-1/4 px-4 max-sm:px-0">
           <h6 className="text-lg text-[#343f52] font-bold">Learn More</h6>
           <ul className="flex flex-col gap-2 my-2">
-            <li>About Us</li>
-            <li>Our Story</li>
-            <li>Projects</li>
+            <Link to={"/about"}>
+              {" "}
+              <li>About Us</li>{" "}
+            </Link>
+            <HashLink to={"/about#self"} smooth>
+              {" "}
+              <li>Our Story</li>
+            </HashLink>
+            <Link to={"/project"}>
+              <li>Projects</li>
+            </Link>
             <li>Term of Use</li>
             <li>Privacy Policy</li>
           </ul>

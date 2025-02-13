@@ -61,6 +61,9 @@ const Service = () => {
             alt=""
             className="w-36 p-3 h-20 max-sm:w-max"
           />
+          <p className="text-xs font-medium text-[#c9cdd4] text-center">
+            Escorts Kubota Limited
+          </p>
         </motion.figure>
         <motion.figure variants={companiesChildrenVariant}>
           {" "}
@@ -69,6 +72,9 @@ const Service = () => {
             alt=""
             className="w-36 p-3 h-20 max-sm:w-ful"
           />
+          <p className="text-xs font-medium text-[#c9cdd4] text-center">
+            Sports Lighting Solution LLP
+          </p>
         </motion.figure>
         <motion.figure variants={companiesChildrenVariant}>
           <img
@@ -76,6 +82,9 @@ const Service = () => {
             alt=""
             className="w-36 p-3 h-20 max-sm:w-max"
           />
+          <p className="text-xs font-medium text-[#c9cdd4] text-center">
+            ANCIT Consulting
+          </p>
         </motion.figure>
         <motion.figure variants={companiesChildrenVariant}>
           <img
@@ -83,6 +92,9 @@ const Service = () => {
             alt=""
             className="w-36 p-3 h-20 max-sm:w-max"
           />
+          <p className="text-xs font-medium text-[#c9cdd4] text-center">
+            Decibels Lab Pvt Ltd
+          </p>
         </motion.figure>
         <motion.figure variants={companiesChildrenVariant}>
           <img
@@ -90,6 +102,9 @@ const Service = () => {
             alt=""
             className="w-36 p-3 h-20 max-sm:w-max"
           />
+          <p className="text-xs font-medium text-[#c9cdd4] text-center">
+            Navstream Innovations
+          </p>
         </motion.figure>
         <motion.figure variants={companiesChildrenVariant}>
           <img
@@ -97,6 +112,9 @@ const Service = () => {
             alt=""
             className="w-36 p-3 h-20 max-sm:w-max "
           />
+          <p className="text-xs font-medium text-[#c9cdd4] text-center">
+            Designing Alley
+          </p>
         </motion.figure>
       </motion.div>
       <motion.div

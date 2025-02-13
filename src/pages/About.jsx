@@ -49,7 +49,7 @@ const About = () => {
         </div>
       </section>
       <section className=" flex font-['Manrope'] px-28 my-36 gap-4 max-sm:px-5 max-sm:flex-col-reverse max-sm:my-20">
-        <div className=" basis-1/2">
+        <div className=" basis-1/2" id="self">
           <h2 className="text-[#343f52] font-semibold text-4xl tracking-wider max-sm:text-2xl max-sm:mt-2">
             Who Are We?
           </h2>
@@ -108,14 +108,16 @@ const About = () => {
           </div>
           <div className="basis-1/2 px-12 my-auto max-sm:basis-full max-sm:px-0">
             <h6 className="text-[#60697b] font-medium text-xl leading-relaxed tracking-wide">
-              “Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-              auctor. Vestibulum ligula porta felis euismod semper. Cras justo
-              odio consectetur nulla dapibus curabitur blandit.”
+              “Innovation should be accessible to everyone. At Ubyte, we turn
+              ideas into reality with expert design, precision manufacturing,
+              and unbeatable value. Your vision drives our passion to create.”
             </h6>
             <h3 className="text-black font-semibold text-xl my-2">
               Pranay Sharma
             </h3>
-            <p className="text-[#60697b] font-medium text-md">Founder & CTO</p>
+            <p className="text-[#60697b] font-medium text-md">
+              CTO & Lead Hardware Engineer
+            </p>
           </div>
         </div>
       </section>
@@ -126,7 +128,7 @@ const About = () => {
             choosing our professional team.
           </h1>
         </div>
-        <div className="relative flex justify-center">
+        <div className="relative flex justify-center" id="team">
           <div className="carousel rounded-box w-[100%] py-4 ">
             <div className="grid grid-cols-3 gap-4 mx-auto">
               {aboutTeamData
@@ -158,7 +160,7 @@ const About = () => {
             className="rounded-lg aspect-auto w-11/12"
           />
         </div>
-        <div className="basis-1/2 text-center">
+        <div className="basis-1/2 text-center" id="contactForm">
           <h2 className="text-[#343f52] font-semibold text-4xl tracking-wider max-sm:text-3xl max-sm:my-8">
             Convinced yet? Let's make <br className="block max-sm:hidden" />{" "}
             something great together.

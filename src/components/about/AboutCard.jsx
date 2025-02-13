@@ -9,7 +9,7 @@ const AboutCard = ({ card }) => {
         </figure>
         <div className="card-body text-center">
           <h2 className="card-title mx-auto">{card.name}</h2>
-          <h4>{card.role}</h4>
+          <h4 className="text-slate-400 font-medium">{card.role}</h4>
           <p>{card.desc}</p>
           <div className="card-actions  ">
             <a href={card.social} className="mx-auto">

@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { motion, useAnimation, useInView } from "motion/react";
+import { HashLink } from "react-router-hash-link";
 
 const teamVariant = {
   hidden: {
@@ -91,9 +92,11 @@ const Team = () => {
           </p>
         </motion.div>
         <motion.div variants={teamChildVariant}>
-          <button className="p-4 px-6 bg-[#0c96d4] text-white text-base font-bold rounded-full">
-            See All Members
-          </button>
+          <HashLink to={"/about#team"} smooth>
+            <button className="p-4 px-6 bg-[#0c96d4] text-white text-base font-bold rounded-full">
+              See All Members
+            </button>
+          </HashLink>
         </motion.div>
       </motion.div>
       <motion.div
