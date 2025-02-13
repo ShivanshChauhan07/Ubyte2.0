@@ -69,14 +69,16 @@ const Navbar = forwardRef((props, ref) => {
         location.pathname === "/about" ? "bg-[#f6f7f9] pt-5" : "mt-5 bg-white"
       }${
         shadow && "shadow-md bg-white"
-      } max-sm:flex-col max-sm:items-start max-sm:px-2`}
+      } max-sm:flex-col max-sm:items-start max-sm:px-2 `}
     >
       <div className="hidden max-sm:block" onClick={() => setBurger(!burger)}>
         <i className="fa-solid fa-bars text-4xl"></i>
       </div>
       <div
         className={`flex justify-between px-28 ${
-          !burger ? "max-sm:hidden" : "max-sm:block"
+          !burger
+            ? "max-sm:hidden"
+            : "max-sm: w-1/4 flex flex-col items-end mx-4 justify-center "
         }`}
       >
         <div className=" basis-1/5 my-auto py-2 ">
@@ -108,21 +110,30 @@ const Navbar = forwardRef((props, ref) => {
               variants={liVariant}
               className="grow text-center p-4 py-6 hover:text-[#0c96d4] hover:cursor-pointer"
             >
-              <Link to={"/"}> Home </Link>
+              <Link to={"/"} onClick={() => setBurger(false)}>
+                {" "}
+                Home{" "}
+              </Link>
             </motion.li>
 
             <motion.li
               variants={liVariant}
               className="grow text-center p-4 py-6 hover:text-[#0c96d4] hover:cursor-pointer"
             >
-              <Link to={"/project"}> Projects </Link>
+              <Link to={"/project"} onClick={() => setBurger(false)}>
+                {" "}
+                Projects{" "}
+              </Link>
               <i className="fa-solid fa-chevron-down fa-bounce fa-xs mx-2 text-[#0c96d4]"></i>
             </motion.li>
             <motion.li
               variants={liVariant}
               className="grow text-center p-4 py-6 hover:text-[#0c96d4] hover:cursor-pointer"
             >
-              <Link to={"/blog"}> Blogs </Link>
+              <Link to={"/blog"} onClick={() => setBurger(false)}>
+                {" "}
+                Blogs{" "}
+              </Link>
 
               <i className="fa-solid fa-chevron-down fa-bounce fa-xs mx-2 text-[#0c96d4]"></i>
             </motion.li>
@@ -130,13 +141,18 @@ const Navbar = forwardRef((props, ref) => {
               variants={liVariant}
               className="grow text-center p-4 py-6 hover:text-[#0c96d4] hover:cursor-pointer"
             >
-              <Link to={"/shop"}>Shop</Link>
+              <Link to={"/shop"} onClick={() => setBurger(false)}>
+                Shop
+              </Link>
             </motion.li>
             <motion.li
               variants={liVariant}
               className="grow text-center p-4 py-6 hover:text-[#0c96d4] hover:cursor-pointer"
             >
-              <Link to={"/about"}> About Us</Link>{" "}
+              <Link to={"/about"} onClick={() => setBurger(false)}>
+                {" "}
+                About Us
+              </Link>{" "}
             </motion.li>
           </motion.ul>
         </div>

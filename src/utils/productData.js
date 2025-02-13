@@ -121,7 +121,7 @@ const productData = [
     },
     endDesc:
       "This evaluation board is a perfect choice for developers and engineers working on embedded systems, wireless communication, and IoT applications.",
-    pdf: "https://res.cloudinary.com/dvi4f7mfm/image/upload/v1739192627/Ubyte/STM32WB55CGU6_Evaluation_Board_Documentation_gqw4aq.pdf",
+    pdf: "https://res.cloudinary.com/dvi4f7mfm/image/upload/v1739433420/Ubyte/STM32WB55CGU6_Evaluation_Board_Documentation_cntav6.pdf",
   },
   {
     id: 2,
@@ -208,7 +208,7 @@ const productData = [
     },
     endDesc:
       "Upgrade your automotive or industrial automation project today with SmartWheels V1 Pro!",
-    pdf: "https://res.cloudinary.com/dvi4f7mfm/image/upload/v1739192666/Ubyte/SmartWheel_V1_Pro_Documentation_rldyva.pdf",
+    pdf: "https://res.cloudinary.com/dvi4f7mfm/image/upload/v1739433430/Ubyte/SmartWheel_V1_Pro_Documentation_lmnsfa.pdf",
   },
   {
     id: 3,
@@ -256,7 +256,7 @@ const productData = [
     },
     endDesc:
       "This converter offers robust electrical protection, modular design, and a reliable USB-to-serial communication solution for developers and industrial users alike.",
-    pdf: "https://res.cloudinary.com/dvi4f7mfm/image/upload/v1739191460/Ubyte/QuadDatasheet_aztbm1.pdf",
+    pdf: "https://res.cloudinary.com/dvi4f7mfm/image/upload/v1739433441/Ubyte/Quad_channel_USB_to_UART_Convertor_Documentation_cjqdlj.pdf",
   },
 ];
 

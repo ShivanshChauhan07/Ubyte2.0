@@ -4,6 +4,7 @@ import React, { Suspense, useEffect, useRef, useState } from "react";
 //import Footer from "./components/bodyItem/Footer";
 import { Outlet, useLocation } from "react-router";
 import Loading from "./pages/Loading";
+import ScrollTop from "./components/scrollTop/ScrollTop";
 const Navbar = React.lazy(() => import("./components/Navbar/Navbar"));
 const Topbar = React.lazy(() => import("./components/topbar/Topbar"));
 const Footer = React.lazy(() => import("./components/bodyItem/Footer"));
@@ -22,7 +23,7 @@ function App() {
       setIsLoading(false);
     }, [500]);
   }, []);
-  
+
   const adjustHeight = () => {
     if (navBarRef.current) {
       const navbarHeight = navBarRef.current.offsetHeight;
@@ -61,6 +62,7 @@ function App() {
       <Suspense fallback={<Loading />}>
         {location.pathname === "/" && <Topbar ref={topBarRef} />}
         <Navbar ref={navBarRef} />
+        <ScrollTop />
         <Outlet context={{ heroHeight }} />
         <Footer />
       </Suspense>
