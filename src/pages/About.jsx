@@ -18,14 +18,14 @@ const About = () => {
   }, []);
 
   const nextSlide = () => {
-    if (currentIndex + itemsPerPage < totalItems) {
-      setCurrentIndex((prevIndex) => prevIndex + itemsPerPage);
+    if (currentIndex < totalItems - 1) {
+      setCurrentIndex((prevIndex) => prevIndex + 1);
     }
   };
 
   const prevSlide = () => {
-    if (currentIndex - itemsPerPage >= 0) {
-      setCurrentIndex((prevIndex) => prevIndex - itemsPerPage);
+    if (currentIndex > 0) {
+      setCurrentIndex((prevIndex) => prevIndex - 1);
     }
   };
   return isLoading ? (
@@ -130,7 +130,7 @@ const About = () => {
         </div>
         <div className="relative flex justify-center" id="team">
           <div className="carousel rounded-box w-[100%] py-4 ">
-            <div className="grid grid-cols-3 gap-4 mx-auto">
+            <div className="grid grid-cols-3 gap-4 mx-auto max-sm:flex max-sm:flex-row max-sm:gap-2 ">
               {aboutTeamData
                 .slice(currentIndex, currentIndex + itemsPerPage)
                 .map((card, index) => (
@@ -140,13 +140,13 @@ const About = () => {
           </div>
           <button
             onClick={prevSlide}
-            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-[#0c96d4] w-16 h-16 text-white text-xl font-semibold p-2 rounded-full"
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-[#0c96d4] w-16 h-16 text-white text-xl font-semibold p-2 rounded-full max-sm:w-12 max-sm:h-12 max-sm:text-lg max-sm:left-0"
           >
             ❮
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#0c96d4] w-16 h-16 text-white text-xl font-semibold p-2 rounded-full"
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#0c96d4] w-16 h-16 text-white text-xl font-semibold p-2 rounded-full max-sm:w-12 max-sm:h-12 max-sm:text-lg max-sm:right-0"
           >
             ❯
           </button>
