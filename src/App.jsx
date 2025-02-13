@@ -1,21 +1,40 @@
-import { useEffect, useRef, useState } from "react";
-import Body from "./components/Body/Body";
-import Navbar from "./components/Navbar/Navbar";
-import Topbar from "./components/topbar/Topbar";
+import React, { Suspense, useEffect, useRef, useState } from "react";
+//import Navbar from "./components/Navbar/Navbar";
+//import Topbar from "./components/topbar/Topbar";
+//import Footer from "./components/bodyItem/Footer";
+import { Outlet, useLocation } from "react-router";
+import Loading from "./pages/Loading";
+import ScrollTop from "./components/scrollTop/ScrollTop";
+const Navbar = React.lazy(() => import("./components/Navbar/Navbar"));
+const Topbar = React.lazy(() => import("./components/topbar/Topbar"));
+const Footer = React.lazy(() => import("./components/bodyItem/Footer"));
 
 function App() {
   const navBarRef = useRef(null);
   const topBarRef = useRef(null);
   const [heroHeight, setHeroHeight] = useState("100vh");
   const bodyMargin = 20;
+  const location = useLocation();
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, [500]);
+  }, []);
+
+  console.log(navBarRef.current);
 
   const adjustHeight = () => {
     if (navBarRef.current) {
       const navbarHeight = navBarRef.current.offsetHeight;
-      const topbarHeight = topBarRef.current.offsetHeight;
+      const topbarHeight = topBarRef.current && topBarRef.current.offsetHeight;
 
       const styles = getComputedStyle(navBarRef.current);
-      const topStyles = getComputedStyle(topBarRef.current);
+      const topStyles = topBarRef.current
+        ? getComputedStyle(topBarRef.current)
+        : 0;
 
       const topBarMarginTop = parseInt(topStyles.marginTop);
       const topBarMarginBottom = parseInt(topStyles.marginBottom);
@@ -40,11 +59,17 @@ function App() {
     return () => window.removeEventListener("resize", adjustHeight);
   }, []);
 
-  return (
+  return isLoading ? (
+    <Loading />
+  ) : (
     <div>
-      <Topbar ref={topBarRef} />
-      <Navbar ref={navBarRef} />
-      <Body heroHeight={heroHeight} />
+      <Suspense fallback={<Loading />}>
+        {location.pathname === "/" && <Topbar ref={topBarRef} />}
+        <Navbar ref={navBarRef} />
+        <ScrollTop />
+        <Outlet context={{ heroHeight }} />
+        <Footer />
+      </Suspense>
     </div>
   );
 }
