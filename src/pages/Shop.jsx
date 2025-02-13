@@ -22,7 +22,7 @@ const Shop = () => {
           Shop With Us
         </p>
         <img
-          src="/shop/banner.jpg"
+          src="/shop/banner3.png"
           alt=""
           className="w-full h-full max-sm:h-4/6"
         />

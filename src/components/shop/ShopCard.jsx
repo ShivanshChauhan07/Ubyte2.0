@@ -17,10 +17,12 @@ const ShopCard = ({ id, name, img, desc, price }) => {
         <div className="flex flex-col items-center gap-y-2">
           <h3 className="text-3xl font-semibold text-[#0c96d4]">${price}</h3>
           <p>⭐⭐⭐⭐⭐</p>
-          <button className=" border border-[#0c96d4] text-[#0c96d4] font-medium text-lg p-2 w-40 rounded-sm hover:bg-[#0c96d4] hover:text-white ">
-            <i className="fa-solid fa-bag-shopping mr-3"></i>
-            <Link to={`/shop/product/${id}`}> View More </Link>
-          </button>
+          <Link to={`/shop/product/${id}`}>
+            <button className=" border border-[#0c96d4] text-[#0c96d4] font-medium text-lg p-2 w-40 rounded-sm hover:bg-[#0c96d4] hover:text-white ">
+              <i className="fa-solid fa-bag-shopping mr-3"></i>
+              View More
+            </button>
+          </Link>
         </div>
       </div>
     </div>

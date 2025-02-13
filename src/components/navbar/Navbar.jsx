@@ -106,54 +106,51 @@ const Navbar = forwardRef((props, ref) => {
             variants={ulVariant}
             className="flex justify-evenly mx-10 max-sm:block "
           >
-            <motion.li
-              variants={liVariant}
-              className="grow text-center p-4 py-6 hover:text-[#0c96d4] hover:cursor-pointer"
-            >
-              <Link to={"/"} onClick={() => setBurger(false)}>
-                {" "}
-                Home{" "}
-              </Link>
-            </motion.li>
-
-            <motion.li
-              variants={liVariant}
-              className="grow text-center p-4 py-6 hover:text-[#0c96d4] hover:cursor-pointer"
-            >
-              <Link to={"/project"} onClick={() => setBurger(false)}>
+            <Link to={"/"} onClick={() => setBurger(false)}>
+              <motion.li
+                variants={liVariant}
+                className="grow text-center p-4 py-6 hover:text-[#0c96d4] hover:cursor-pointer"
+              >
+                Home
+              </motion.li>
+            </Link>
+            <Link to={"/project"} onClick={() => setBurger(false)}>
+              <motion.li
+                variants={liVariant}
+                className="grow text-center p-4 py-6 hover:text-[#0c96d4] hover:cursor-pointer"
+              >
                 {" "}
                 Projects{" "}
-              </Link>
-              <i className="fa-solid fa-chevron-down fa-bounce fa-xs mx-2 text-[#0c96d4]"></i>
-            </motion.li>
-            <motion.li
-              variants={liVariant}
-              className="grow text-center p-4 py-6 hover:text-[#0c96d4] hover:cursor-pointer"
-            >
-              <Link to={"/blog"} onClick={() => setBurger(false)}>
+                <i className="fa-solid fa-chevron-down fa-bounce fa-xs mx-2 text-[#0c96d4]"></i>
+              </motion.li>
+            </Link>
+            <Link to={"/blog"} onClick={() => setBurger(false)}>
+              <motion.li
+                variants={liVariant}
+                className="grow text-center p-4 py-6 hover:text-[#0c96d4] hover:cursor-pointer"
+              >
                 {" "}
                 Blogs{" "}
-              </Link>
-
-              <i className="fa-solid fa-chevron-down fa-bounce fa-xs mx-2 text-[#0c96d4]"></i>
-            </motion.li>
-            <motion.li
-              variants={liVariant}
-              className="grow text-center p-4 py-6 hover:text-[#0c96d4] hover:cursor-pointer"
-            >
-              <Link to={"/shop"} onClick={() => setBurger(false)}>
+                <i className="fa-solid fa-chevron-down fa-bounce fa-xs mx-2 text-[#0c96d4]"></i>
+              </motion.li>
+            </Link>
+            <Link to={"/shop"} onClick={() => setBurger(false)}>
+              <motion.li
+                variants={liVariant}
+                className="grow text-center p-4 py-6 hover:text-[#0c96d4] hover:cursor-pointer"
+              >
                 Shop
-              </Link>
-            </motion.li>
-            <motion.li
-              variants={liVariant}
-              className="grow text-center p-4 py-6 hover:text-[#0c96d4] hover:cursor-pointer"
-            >
-              <Link to={"/about"} onClick={() => setBurger(false)}>
+              </motion.li>
+            </Link>
+            <Link to={"/about"} onClick={() => setBurger(false)}>
+              <motion.li
+                variants={liVariant}
+                className="grow text-center p-4 py-6 hover:text-[#0c96d4] hover:cursor-pointer"
+              >
                 {" "}
                 About Us
-              </Link>{" "}
-            </motion.li>
+              </motion.li>
+            </Link>
           </motion.ul>
         </div>
         <div className=" basis-1/5 text-right my-auto">

@@ -17,7 +17,7 @@ const Topbar = forwardRef((props, ref) => {
       <div className="basis-3/4 justify-items-end mx-16 max-sm:mx-0 max-sm:basis-0 max-sm:my-3">
         <p>
           <i className="fa-solid fa-phone-volume mx-2 text-lg"></i>
-          +91-7982725030, +91-9871249013
+          +91-7982725030, +91-989977637
         </p>
       </div>
       <div>

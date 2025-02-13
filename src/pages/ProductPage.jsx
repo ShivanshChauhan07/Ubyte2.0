@@ -64,11 +64,14 @@ const ProductPage = () => {
             productName={product.name}
           />
         </div>
-        <div className="basis-1/2" id="back">
+        <div
+          className="basis-1/2 max-w-[640px] max-h-[480px] aspect-square"
+          id="back"
+        >
           <img
             src={selectProduct}
             alt=""
-            className="w-full h-[472px] max-sm:h-3/4"
+            className="w-full h-auto max-w-[640px] max-h-[480px] aspect-square object-contain max-sm:h-3/4"
           />
           <ProductCarousel
             selectProduct={selectProduct}
@@ -115,7 +118,7 @@ const ProductPage = () => {
                 else alert("Please Select Your Quantity First !");
               }}
             >
-              Send Your Demand
+              Request Your Quote
             </button>
             <div>
               <h3 className="text-[#666666] my-2 ">

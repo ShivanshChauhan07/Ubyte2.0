@@ -76,7 +76,10 @@ const Project = () => {
           {projectData.map((data, index) => {
             return (
               <SwiperSlide key={index} className="p-6">
-                <img src={data.img} className="rounded-box w-full h-80" />
+                <img
+                  src={data.img}
+                  className="rounded-box w-full h-auto max-h-80 aspect-square object-contain"
+                />
               </SwiperSlide>
             );
           })}

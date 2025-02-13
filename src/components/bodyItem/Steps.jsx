@@ -87,7 +87,7 @@ const Steps = () => {
             <figure className="bg-[#0c96d4] rounded-full w-fit h-10 p-4 flex items-center">
               <h1 className="font-medium text-lg text-white rounded-full">1</h1>
             </figure>
-            <div className="mx-10 pr-36 max-sm:pr-0 max-sm:mx-0 max-sm:ml-6">
+            <div className="grow mx-10 max-sm:pr-0 max-sm:mx-0 max-sm:ml-6">
               <motion.h4
                 variants={worksChildVariant}
                 className="text-lg font-semibold max-sm:text-xxl"
@@ -104,11 +104,11 @@ const Steps = () => {
               </motion.p>
             </div>
           </div>
-          <div className="flex justify-between my-6 ">
+          <div className="flex justify-between my-6">
             <figure className="bg-[#0c96d4] rounded-full w-fit h-10 p-4 flex items-center">
               <h1 className="font-medium text-lg text-white rounded-full">2</h1>
             </figure>
-            <div className="mx-10 pr-36 max-sm:pr-0 max-sm:mx-0 max-sm:ml-6 ">
+            <div className="grow mx-10 max-sm:pr-0 max-sm:mx-0 max-sm:ml-6 ">
               <motion.h4
                 variants={worksChildVariant}
                 className="text-lg font-semibold max-sm:text-xxl"
@@ -128,7 +128,7 @@ const Steps = () => {
             <figure className="bg-[#0c96d4] rounded-full w-fit h-10 p-4 flex items-center">
               <h1 className="font-medium text-lg text-white rounded-full">3</h1>
             </figure>
-            <div className="mx-10 pr-36 max-sm:pr-0 max-sm:mx-0 max-sm:ml-6">
+            <div className="grow mx-10 max-sm:pr-0 max-sm:mx-0 max-sm:ml-6">
               <motion.h4
                 variants={worksChildVariant}
                 className="text-lg font-semibold max-sm:text-xxl"

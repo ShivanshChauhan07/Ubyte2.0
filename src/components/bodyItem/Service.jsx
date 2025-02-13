@@ -59,7 +59,7 @@ const Service = () => {
           <img
             src="/companies/image1.jpg"
             alt=""
-            className="w-36 p-3 h-20 max-sm:w-max"
+            className="w-36 p-3 h-20  aspect-square object-contain max-sm:w-max"
           />
           <p className="text-xs font-medium text-[#c9cdd4] text-center">
             Escorts Kubota Limited
@@ -70,7 +70,7 @@ const Service = () => {
           <img
             src="/companies/image2.jpg"
             alt=""
-            className="w-36 p-3 h-20 max-sm:w-ful"
+            className="w-36 p-3 h-20  aspect-square object-contain max-sm:w-ful"
           />
           <p className="text-xs font-medium text-[#c9cdd4] text-center">
             Sports Lighting Solution LLP
@@ -80,7 +80,7 @@ const Service = () => {
           <img
             src="/companies/image3.webp"
             alt=""
-            className="w-36 p-3 h-20 max-sm:w-max"
+            className="w-36 p-3 h-20  aspect-square object-contain max-sm:w-max"
           />
           <p className="text-xs font-medium text-[#c9cdd4] text-center">
             ANCIT Consulting
@@ -90,7 +90,7 @@ const Service = () => {
           <img
             src="/companies/image4.png"
             alt=""
-            className="w-36 p-3 h-20 max-sm:w-max"
+            className="w-36 p-3 h-20  aspect-square object-contain max-sm:w-max"
           />
           <p className="text-xs font-medium text-[#c9cdd4] text-center">
             Decibels Lab Pvt Ltd
@@ -100,7 +100,7 @@ const Service = () => {
           <img
             src="/companies/image5.png"
             alt=""
-            className="w-36 p-3 h-20 max-sm:w-max"
+            className="w-36 p-3 h-20  aspect-square object-contain max-sm:w-max"
           />
           <p className="text-xs font-medium text-[#c9cdd4] text-center">
             Navstream Innovations
@@ -110,7 +110,7 @@ const Service = () => {
           <img
             src="/companies/image6.jpg"
             alt=""
-            className="w-36 p-3 h-20 max-sm:w-max "
+            className="w-36 p-3 h-20  aspect-square object-contain max-sm:w-max "
           />
           <p className="text-xs font-medium text-[#c9cdd4] text-center">
             Designing Alley

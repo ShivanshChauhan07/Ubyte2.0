@@ -18,7 +18,7 @@ const About = () => {
   }, []);
 
   const nextSlide = () => {
-    if (currentIndex < totalItems - 1) {
+    if (currentIndex < totalItems - 3) {
       setCurrentIndex((prevIndex) => prevIndex + 1);
     }
   };

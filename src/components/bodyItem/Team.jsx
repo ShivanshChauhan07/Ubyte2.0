@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import teamData from "../../utils/teamData";
 import TeamCard from "./card/TeamCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, FreeMode } from "swiper/modules";
@@ -8,6 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { motion, useAnimation, useInView } from "motion/react";
 import { HashLink } from "react-router-hash-link";
+import aboutTeamData from "../../utils/aboutTeamData";
 
 const teamVariant = {
   hidden: {
@@ -119,7 +119,7 @@ const Team = () => {
           initialSlide={0}
           className="flex-grow mx-10   "
         >
-          {teamData.map((item, index) => {
+          {aboutTeamData.map((item, index) => {
             return (
               <SwiperSlide key={index} className="p-6">
                 <TeamCard

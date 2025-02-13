@@ -34,9 +34,9 @@ const ProjectCard = ({ inverted, img, name, shortDesc }) => {
           <p className="text-gray-600">{shortDesc}</p>
         </div>
         <div>
-          <button className="mt-4 px-4 py-2 bg-[#0c96d4] text-white rounded-lg hover:bg-blue-600 ">
+          {/* <button className="mt-4 px-4 py-2 bg-[#0c96d4] text-white rounded-lg hover:bg-blue-600 ">
             Project Link
-          </button>
+          </button> */}
         </div>
       </motion.div>
     </div>

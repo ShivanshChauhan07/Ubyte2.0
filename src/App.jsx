@@ -24,13 +24,17 @@ function App() {
     }, [500]);
   }, []);
 
+  console.log(navBarRef.current);
+
   const adjustHeight = () => {
     if (navBarRef.current) {
       const navbarHeight = navBarRef.current.offsetHeight;
-      const topbarHeight = topBarRef.current.offsetHeight;
+      const topbarHeight = topBarRef.current && topBarRef.current.offsetHeight;
 
       const styles = getComputedStyle(navBarRef.current);
-      const topStyles = getComputedStyle(topBarRef.current);
+      const topStyles = topBarRef.current
+        ? getComputedStyle(topBarRef.current)
+        : 0;
 
       const topBarMarginTop = parseInt(topStyles.marginTop);
       const topBarMarginBottom = parseInt(topStyles.marginBottom);
