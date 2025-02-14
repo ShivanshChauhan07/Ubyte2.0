@@ -74,7 +74,7 @@ const Modal = ({ modal, setModal, counter, productName }) => {
 
   return (
     <div
-      className={`absolute p-4 px-6 rounded-md shadow-lg top-1/3 left-1/3  z-10 w-1/4 h-fit bg-white flex flex-col items-end ${
+      className={`fixed p-4 px-6 rounded-md shadow-lg top-1/3 left-1/3  z-10 w-1/4 h-fit bg-white flex flex-col items-end ${
         !modal && "hidden"
       } max-sm:w-3/4 max-sm:left-12`}
     >
