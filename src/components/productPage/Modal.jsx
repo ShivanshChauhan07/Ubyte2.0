@@ -23,7 +23,10 @@ const Modal = ({ modal, setModal, counter, productName }) => {
 
   useEffect(() => {
     flag && navigate("/shop");
-    flag && alert("Order Placed Successfully !");
+    flag &&
+      alert(
+        "Thank you for showing interest in our product. Our team will contact you shortly !"
+      );
   }, [flag]);
 
   const sendMail = async () => {

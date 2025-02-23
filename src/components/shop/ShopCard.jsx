@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router";
 
-const ShopCard = ({ id, name, img, desc, price }) => {
+const ShopCard = ({ id, name, img, desc, price, indiaPrice }) => {
   return (
     <div className="border-2 border-slate-100 flex max-sm:block max-sm:w-fit ">
       <div className="border-r border-slate-100 basis-3/4 p-6">
@@ -16,6 +16,10 @@ const ShopCard = ({ id, name, img, desc, price }) => {
       <div className="basis-1/4 content-center ">
         <div className="flex flex-col items-center gap-y-2">
           <h3 className="text-3xl font-semibold text-[#0c96d4]">${price}</h3>
+          <h6 className="text-xl font-semibold text-[#0c96d4]">
+            {" "}
+            (₹{indiaPrice})
+          </h6>
           <p>⭐⭐⭐⭐⭐</p>
           <Link to={`/shop/product/${id}`}>
             <button className=" border border-[#0c96d4] text-[#0c96d4] font-medium text-lg p-2 w-40 rounded-sm hover:bg-[#0c96d4] hover:text-white ">

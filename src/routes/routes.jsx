@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, createHashRouter } from "react-router";
 //import About from "../pages/About";
 //import ProjectPage from "../pages/ProjectPage";
 //import App from "../App";
@@ -17,7 +17,7 @@ const About = React.lazy(() => import("../pages/About"));
 const ProjectPage = React.lazy(() => import("../pages/ProjectPage"));
 const Error = React.lazy(() => import("../pages/Error"));
 const Blog = React.lazy(() => import("../pages/Blog"));
-const routes = createBrowserRouter([
+const routes = createHashRouter([
   {
     path: "/",
     element: (

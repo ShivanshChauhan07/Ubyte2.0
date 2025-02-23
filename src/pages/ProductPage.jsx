@@ -54,7 +54,7 @@ const ProductPage = () => {
   ) : (
     <>
       <section
-        className={`flex px-28 mt-8 gap-x-4 font-['Manrope'] max-sm:block max-sm:px-2`}
+        className={`flex px-28 mt-1 gap-x-4 font-['Manrope'] max-sm:block max-sm:px-2`}
       >
         <div>
           <Modal
@@ -85,7 +85,10 @@ const ProductPage = () => {
               {product?.name}
             </h3>
             <p className="text-[#0c96d4] font-semibold text-xl">
-              ${product?.price}
+              ${product?.price} / ₹{product?.indiaPrice}{" "}
+              <span className="text-red-500 font-semibold text-sm">
+                (Exclusive of Taxes)
+              </span>
             </p>
             <p>⭐⭐⭐⭐⭐</p>
             <p className="text-[#60697b]">{product.shortDesc}</p>
@@ -145,12 +148,22 @@ const ProductPage = () => {
                 />
               </figure>
               <figure className="hover:cursor-pointer">
-                {" "}
-                <img
-                  className="w-20 h-10 rounded-md"
-                  src="/productPage/Electronic.webp"
-                  alt=""
-                />
+                <a href={product?.infra}>
+                  <img
+                    className="w-20 h-10 rounded-md"
+                    src="/productPage/Electronic.webp"
+                    alt=""
+                  />
+                </a>
+              </figure>
+              <figure className="hover:cursor-pointer">
+                <a href={product?.mart}>
+                  <img
+                    className="w-20 h-10 rounded-md aspect-square"
+                    src="/productPage/mart.png"
+                    alt=""
+                  />
+                </a>
               </figure>
             </div>
           </div>

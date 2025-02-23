@@ -3,7 +3,8 @@ const productData = [
     id: 1,
     name: "STM32WB55CGU6 Evaluation Board V1.0",
     fullName: "",
-    price: 7,
+    price: 6.9,
+    indiaPrice: 599,
     shortDesc:
       "The STM32WB55CGU6 Evaluation Board is a hardware platform based on the STM32WB55CGU6 microcontroller, designed for IoT and embedded system applications. It features Bluetooth 5.0 connectivity, USB Type-C interface, onboard debugging, and expansion headers for external peripherals.",
     desc: {
@@ -101,7 +102,7 @@ const productData = [
         },
       ],
     },
-    img: "/shop/Best1.png",
+    img: "/productPage/STM/Best1.png",
     images: [
       "/productPage/STM/Best1.png",
       "/productPage/STM/2.png",
@@ -109,6 +110,8 @@ const productData = [
       "/productPage/STM/4.png",
       "/productPage/STM/5.png",
       "/productPage/STM/6.png",
+      "/productPage/STM/7.png",
+      "/productPage/STM/8.png",
     ],
     choose: {
       "Why Choose This Evaluation Board?": [
@@ -121,7 +124,9 @@ const productData = [
     },
     endDesc:
       "This evaluation board is a perfect choice for developers and engineers working on embedded systems, wireless communication, and IoT applications.",
-    pdf: "https://res.cloudinary.com/dvi4f7mfm/image/upload/v1739433420/Ubyte/STM32WB55CGU6_Evaluation_Board_Documentation_cntav6.pdf",
+    pdf: "https://res.cloudinary.com/dvi4f7mfm/image/upload/v1740321140/Ubyte2.0/STM32WB55CGU6_Documentation_gz1srx.pdf",
+    infra: "https://electronicsinfra.com/product/stm32wb55-eval-board/",
+    mart: "https://www.indiamart.com/proddetail/stm32wb55cgu6-evaluation-board-2855821080788.html?pos=5&kwd=stm32wb55%20eval&tags=||||8769.508|Price|product|||NA|rsf:gd-|-res:RC2|ktp:N0|stype:attr=1|mtp:S|wc:2|qr_nm:gd|com-cf:nl|ptrs:na|mc:177218|cat:819|qry_typ:P|lang:en|flavl:0-1|cs:8913|v=4",
   },
   {
     id: 2,
@@ -129,6 +134,7 @@ const productData = [
     fullName:
       "SmartWheels V1 Pro – Advanced Automotive Control and Monitoring System",
     price: 290,
+    indiaPrice: 25130,
     shortDesc:
       "SmartWheels V1 Pro is an advanced automotive control and monitoring system with motor control, CAN/LIN communication, power management, and cloud connectivity—ideal for smart vehicles and IoT-based applications.",
     desc: {
@@ -189,7 +195,7 @@ const productData = [
         },
       ],
     },
-    img: "/shop/Best2.png",
+    img: "/productPage/Smart/Best1.png",
     images: [
       "/productPage/Smart/Best1.png",
       "/productPage/Smart/2.png",
@@ -208,13 +214,16 @@ const productData = [
     },
     endDesc:
       "Upgrade your automotive or industrial automation project today with SmartWheels V1 Pro!",
-    pdf: "https://res.cloudinary.com/dvi4f7mfm/image/upload/v1739433430/Ubyte/SmartWheel_V1_Pro_Documentation_lmnsfa.pdf",
+    pdf: "https://res.cloudinary.com/dvi4f7mfm/image/upload/v1740321192/Ubyte2.0/SmartWheel_V1_Pro_Documentation_noimcv.pdf",
+    infra: "",
+    mart: "",
   },
   {
     id: 3,
     name: "Quad Channel USB to UART Converter",
     fullName: "",
-    price: 10,
+    price: 8.69,
+    indiaPrice: 749,
     shortDesc:
       "The Quad Channel USB-to-UART Converter is a compact and efficient interface that enables seamless USB-to-serial communication with four independent UART channels. It features an ESP32 auto-boot mode circuit. With USB Type-C power input, EEPROM storage, and flexible voltage selection (1.8V, 3.3V, 5V), it is ideal for embedded development and industrial applications.",
     desc: {
@@ -225,9 +234,9 @@ const productData = [
           title: "Key Features:",
           desc: [
             "USB Type-C Interface – Provides power and high-speed data communication.",
-            "Quad UART Bridge (XR21V1414IM48TR-F) – Converts USB data into four UART channels, ensuring efficient serial communication.",
+            "Quad UART Bridge – Converts USB data into four UART channels, ensuring efficient serial communication.",
             "Voltage Level Shifters – Supports multiple logic levels for broad device compatibility.",
-            "Integrated EEPROM (M24C02-WMN6TP) – Stores USB configuration settings for consistent operation.",
+            "Integrated EEPROM – Stores USB configuration settings for consistent operation.",
             "ESP32 Auto-Boot Support – Dedicated programmable Channel B with boot/reset controls for ESP32 development.",
             "Multiple Power Domains – Includes LDO regulators for 5V, 3.3V, and 1.8V operation.",
             "LED Indicators – Status LEDs for power, UART activity, and ESP32 boot/reset functions.",
@@ -236,7 +245,7 @@ const productData = [
         },
       ],
     },
-    img: "/shop/Best3.png",
+    img: "/productPage/Quad/Best1.png",
     images: [
       "/productPage/Quad/Best1.png",
       "/productPage/Quad/2.png",
@@ -244,6 +253,7 @@ const productData = [
       "/productPage/Quad/4.png",
       "/productPage/Quad/5.png",
       "/productPage/Quad/6.png",
+      "/productPage/Quad/7.png",
     ],
     choose: {
       "Applications:": [
@@ -256,7 +266,10 @@ const productData = [
     },
     endDesc:
       "This converter offers robust electrical protection, modular design, and a reliable USB-to-serial communication solution for developers and industrial users alike.",
-    pdf: "https://res.cloudinary.com/dvi4f7mfm/image/upload/v1739433441/Ubyte/Quad_channel_USB_to_UART_Convertor_Documentation_cjqdlj.pdf",
+    pdf: "https://res.cloudinary.com/dvi4f7mfm/image/upload/v1740321242/Ubyte2.0/Quad_channel_Documentation_y2gnsz.pdf",
+    infra:
+      "https://electronicsinfra.com/product/quad-channel-usb-to-uart-converter/",
+    mart: "https://www.indiamart.com/proddetail/quad-channel-usb-to-uart-convertor-2855820441030.html",
   },
 ];
 
