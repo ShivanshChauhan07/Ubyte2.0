@@ -2,6 +2,7 @@ import React, { forwardRef, useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { Link, useLocation } from "react-router";
 import { HashLink } from "react-router-hash-link";
+import { useDispatch, useSelector } from "react-redux";
 
 const ulVariant = {
   hidden: {
@@ -36,9 +37,21 @@ const Navbar = forwardRef((props, ref) => {
   const location = useLocation();
   const [shadow, setShadow] = useState(false);
   const [burger, setBurger] = useState(false);
+  const [count, setCount] = useState(0);
   const [screenWidth, setScreenWidth] = useState("");
+  const quantitySelector = useSelector((store) => store.cart.cartItem);
 
-  console.log(screenWidth);
+  console.log(quantitySelector);
+
+  useEffect(() => {
+    if (quantitySelector.length > 0)
+      setCount(
+        quantitySelector.reduce(
+          (accumulator, currentValue) => accumulator + currentValue.quantity,
+          0
+        )
+      );
+  }, [quantitySelector]);
 
   useEffect(() => {
     const handleChange = () => {
@@ -154,22 +167,45 @@ const Navbar = forwardRef((props, ref) => {
           </motion.ul>
         </div>
         <div className=" basis-1/5 text-right my-auto">
-          <motion.button
-            initial={{ scale: 1.2, opacity: 0 }}
-            animate={{
-              scale: [1, 1.2, 1, 1.2, 1],
-              opacity: 1,
-              transition: {
-                ease: "easeInOut",
-                duration: 2,
-              },
-            }}
-            className=" bg-[#0c96d4] text-white rounded-3xl p-3 px-6 font-bold hover:shadow-lg max-sm:hidden "
-          >
-            <HashLink to={"/about#contactForm"} smooth>
-              Contact Us
-            </HashLink>
-          </motion.button>
+          {location.pathname.includes("/shop") ||
+          location.pathname.includes("/cart") ? (
+            <motion.button
+              initial={{ scale: 1.2, opacity: 0 }}
+              animate={{
+                scale: [1, 1.2, 1, 1.2, 1],
+                opacity: 1,
+                transition: {
+                  ease: "easeInOut",
+                  duration: 2,
+                },
+              }}
+              className=" relative bg-[#0c96d4] text-white text-xl rounded-full p-2 aspect-square w-12  font-bold hover:shadow-lg max-sm:hidden "
+            >
+              <Link to={"/cart"} smooth>
+                <i className="fa-solid fa-cart-shopping"></i>
+              </Link>
+              <div className="flex absolute bg-red-600 rounded-full text-sm aspect-square w-6  justify-center bottom-8 left-6  text-white font-semibold">
+                <h3 className="self-center">{count}</h3>
+              </div>
+            </motion.button>
+          ) : (
+            <motion.button
+              initial={{ scale: 1.2, opacity: 0 }}
+              animate={{
+                scale: [1, 1.2, 1, 1.2, 1],
+                opacity: 1,
+                transition: {
+                  ease: "easeInOut",
+                  duration: 2,
+                },
+              }}
+              className=" bg-[#0c96d4] text-white rounded-3xl p-3 px-6 font-bold hover:shadow-lg max-sm:hidden "
+            >
+              <HashLink to={"/about#contactForm"} smooth>
+                Contact Us
+              </HashLink>
+            </motion.button>
+          )}
         </div>
       </div>
     </nav>

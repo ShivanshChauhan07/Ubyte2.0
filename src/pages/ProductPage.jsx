@@ -6,6 +6,8 @@ import ProductFeatures from "../components/productPage/ProductFeatures";
 import PdfViewer from "../components/productPage/PdfViewer";
 import Modal from "../components/productPage/Modal";
 import Loading from "./Loading";
+import { useDispatch } from "react-redux";
+import { addCartItems, updateCartCounter } from "../slices/cart";
 
 const ProductCarousel = React.lazy(() =>
   import("../components/productPage/ProductCarousel")
@@ -15,9 +17,24 @@ const ProductPage = () => {
   const product = productData.filter((item) => item.id === parseInt(id))[0];
   const [counter, setCounter] = useState(0);
   const [selection, setSelection] = useState(0);
-  const [modal, setModal] = useState(false);
+  // const [modal, setModal] = useState(false);
+  const dispatch = useDispatch();
   const [selectProduct, setSelectProduct] = useState(product.img);
   const [isLoading, setIsLoading] = useState(true);
+
+  const handleAddtoCart = () => {
+    dispatch(
+      addCartItems({
+        id: product.id,
+        name: product.name,
+        img: product.img,
+        price: product.price,
+        indiaPrice: product.indiaPrice,
+        quantity: counter,
+      })
+    );
+    dispatch(updateCartCounter(counter));
+  };
 
   useEffect(() => {
     setTimeout(() => {
@@ -25,29 +42,29 @@ const ProductPage = () => {
     }, [500]);
   }, []);
 
-  useEffect(() => {
-    const backElement = document.querySelector("#back");
-    const btn = document.querySelector(".btn");
-    if (!backElement) {
-      console.warn("Element with id 'back' not found!"); // Debugging log
-      return;
-    }
-    if (modal) {
-      document.body.style.overflow = "hidden";
-      backElement.style.pointerEvents = "none";
-      btn.style.pointerEvents = "none";
-    } else {
-      document.body.style.overflow = "";
-      backElement.style.pointerEvents = "auto";
-      btn.style.pointerEvents = "auto";
-    }
+  // useEffect(() => {
+  //   const backElement = document.querySelector("#back");
+  //   const btn = document.querySelector(".btn");
+  //   if (!backElement) {
+  //     console.warn("Element with id 'back' not found!"); // Debugging log
+  //     return;
+  //   }
+  //   if (modal) {
+  //     document.body.style.overflow = "hidden";
+  //     backElement.style.pointerEvents = "none";
+  //     btn.style.pointerEvents = "none";
+  //   } else {
+  //     document.body.style.overflow = "";
+  //     backElement.style.pointerEvents = "auto";
+  //     btn.style.pointerEvents = "auto";
+  //   }
 
-    return () => {
-      document.body.style.overflow = "";
-      backElement.style.pointerEvents = "auto";
-      btn.style.pointerEvents = "auto";
-    };
-  }, [modal]);
+  //   return () => {
+  //     document.body.style.overflow = "";
+  //     backElement.style.pointerEvents = "auto";
+  //     btn.style.pointerEvents = "auto";
+  //   };
+  // }, [modal]);
 
   return isLoading ? (
     <Loading />
@@ -56,14 +73,14 @@ const ProductPage = () => {
       <section
         className={`flex px-28 mt-1 gap-x-4 font-['Manrope'] max-sm:block max-sm:px-2`}
       >
-        <div>
+        {/* <div>
           <Modal
             modal={modal}
             setModal={setModal}
             counter={counter}
             productName={product.name}
           />
-        </div>
+        </div> */}
         <div
           className="basis-1/2 max-w-[640px] max-h-[480px] aspect-square"
           id="back"
@@ -117,11 +134,12 @@ const ProductPage = () => {
             <button
               className="btn bg-[#0c96d4] text-white font-medium w-3/4 p-3 rounded-sm my-4 select-none hover:bg-[#327493] hover:text-white"
               onClick={() => {
-                if (counter > 0) setModal(!modal);
-                else alert("Please Select Your Quantity First !");
+                if (counter > 0) {
+                  handleAddtoCart();
+                } else alert("Please Select Your Quantity First !");
               }}
             >
-              Request Your Quote
+              Add To Cart
             </button>
             <div>
               <h3 className="text-[#666666] my-2 ">

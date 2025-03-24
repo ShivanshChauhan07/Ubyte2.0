@@ -5,6 +5,8 @@ import { createBrowserRouter, createHashRouter } from "react-router";
 //import Body from "../components/Body/Body";
 import React, { Suspense } from "react";
 import Loading from "../pages/Loading";
+import { Provider } from "react-redux";
+import store from "../store/store";
 //import Error from "../pages/Error";
 //import Shop from "../pages/Shop";
 //import ProductPage from "../pages/ProductPage";
@@ -17,12 +19,17 @@ const About = React.lazy(() => import("../pages/About"));
 const ProjectPage = React.lazy(() => import("../pages/ProjectPage"));
 const Error = React.lazy(() => import("../pages/Error"));
 const Blog = React.lazy(() => import("../pages/Blog"));
+const ShopingCart = React.lazy(() => import("../pages/ShopingCart"));
+const Checkout = React.lazy(() => import("../pages/Checkout"));
+
 const routes = createHashRouter([
   {
     path: "/",
     element: (
       <Suspense fallback={<Loading />}>
-        <App />
+        <Provider store={store}>
+          <App />
+        </Provider>
       </Suspense>
     ),
     children: [
@@ -69,6 +76,14 @@ const routes = createHashRouter([
       {
         path: "/blog",
         element: <Blog />,
+      },
+      {
+        path: "/cart",
+        element: <ShopingCart />,
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />,
       },
     ],
   },
