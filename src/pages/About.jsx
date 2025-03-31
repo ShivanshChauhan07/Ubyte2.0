@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 //import AboutCard from "../components/about/AboutCard";
 import aboutTeamData from "../utils/aboutTeamData";
 import Loading from "./Loading";
+import Clients from "../components/about/Clients";
 //import ConnectUs from "../components/about/ConnectUs";
 const AboutCard = React.lazy(() => import("../components/about/AboutCard"));
 const ConnectUs = React.lazy(() => import("../components/about/ConnectUs"));
@@ -129,7 +130,7 @@ const About = () => {
           </h1>
         </div>
         <div className="relative flex justify-center" id="team">
-          <div className="carousel rounded-box w-[100%] py-4 ">
+          {/* <div className="carousel rounded-box w-[100%] py-4 ">
             <div className="grid grid-cols-3 gap-4 mx-auto max-sm:flex max-sm:flex-row max-sm:gap-2 ">
               {aboutTeamData
                 .slice(currentIndex, currentIndex + itemsPerPage)
@@ -149,8 +150,16 @@ const About = () => {
             className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#0c96d4] w-16 h-16 text-white text-xl font-semibold p-2 rounded-full max-sm:w-12 max-sm:h-12 max-sm:text-lg max-sm:right-0"
           >
             ❯
-          </button>
+          </button> */}
+          <div className="grid grid-cols-4 gap-4 mx-auto max-sm:flex max-sm:flex-row max-sm:gap-2">
+            {aboutTeamData.map((card, index) => (
+              <AboutCard key={index} card={card} />
+            ))}
+          </div>
         </div>
+      </section>
+      <section className="mx-auto px-28 my-20 gap-x-8 max-sm:px-5 max-sm:flex-col">
+        <Clients />
       </section>
       <section className="flex px-28 my-20 gap-x-8 max-sm:px-5 max-sm:flex-col">
         <div className="basis-1/2 content-center justify-items-center">
@@ -160,13 +169,15 @@ const About = () => {
             className="rounded-lg aspect-auto w-11/12"
           />
         </div>
-        <div className="basis-1/2 text-center" id="contactForm">
+
+        <div className="basis-1/2 text-center">
           <h2 className="text-[#343f52] font-semibold text-4xl tracking-wider max-sm:text-3xl max-sm:my-8">
             Convinced yet? Let's make <br className="block max-sm:hidden" />{" "}
             something great together.
           </h2>
           <ConnectUs />
         </div>
+        <div id="contactForm"></div>
       </section>
     </>
   );

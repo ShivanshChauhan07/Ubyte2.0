@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Card from "./card/Card";
 import cardData from "../../utils/cardData";
 import { motion, useAnimation, useInView } from "motion/react";
@@ -10,7 +10,7 @@ const companiesVariant = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.5,
+      staggerChildren: 0.2,
     },
   },
 };
@@ -31,22 +31,79 @@ const companiesChildrenVariant = {
   },
 };
 
+const stats = [
+  { id: 1, label: "Clients across the world", value: 50 },
+  { id: 2, label: "Project Delivered", value: 300 },
+  { id: 3, label: "PCBs Produced ", value: 45000 },
+  { id: 4, label: "Year of Excellence", value: 6 },
+];
+
 const Service = () => {
   const control = useAnimation();
   const logoRef = useRef(null);
   const sectionRef = useRef(null);
   const logoView = useInView(logoRef, { once: true, amount: 0.5 });
+  const [counts, setCounts] = useState(stats.map(() => 0));
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
     if (logoView) control.start("visible");
   }, [logoRef, logoView]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+
+          const intervals = stats.map((stat, index) => {
+            const increment = Math.ceil(stat.value / 100);
+            return setInterval(() => {
+              setCounts((prevCounts) => {
+                const newCounts = [...prevCounts];
+                if (newCounts[index] < stat.value) {
+                  newCounts[index] = Math.min(
+                    newCounts[index] + increment,
+                    stat.value
+                  );
+                } else {
+                  clearInterval(intervals[index]);
+                }
+                return newCounts;
+              });
+            }, 20);
+          });
+
+          return () =>
+            intervals.forEach(
+              (interval) => interval && clearInterval(interval)
+            );
+        }
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.3,
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [hasAnimated, stats]);
   return (
     <section ref={sectionRef} className=" px-28 max-sm:px-5">
       <motion.h4
         variants={companiesChildrenVariant}
-        className="font-['Manrope'] text-[#c9cdd4] font-bold mt-32 text-center my-6 max-sm:mt-6"
+        className="font-['Manrope'] text-[#c9cdd4] font-bold mt-24 text-center my-6 max-sm:mt-6"
       >
-        OUR PARTNERS & CLIENTS
+        OUR COMMITMENTS & MILESTONES
       </motion.h4>
       <motion.div
         ref={logoRef}
@@ -55,67 +112,17 @@ const Service = () => {
         variants={companiesVariant}
         className=" flex justify-evenly max-sm:flex-wrap "
       >
-        <motion.figure variants={companiesChildrenVariant}>
-          <img
-            src="/companies/image1.jpg"
-            alt=""
-            className="w-36 p-3 h-20  aspect-square object-contain max-sm:w-max"
-          />
-          <p className="text-xs font-medium text-[#c9cdd4] text-center">
-            Escorts Kubota Limited
-          </p>
-        </motion.figure>
-        <motion.figure variants={companiesChildrenVariant}>
-          {" "}
-          <img
-            src="/companies/image2.jpg"
-            alt=""
-            className="w-36 p-3 h-20  aspect-square object-contain max-sm:w-ful"
-          />
-          <p className="text-xs font-medium text-[#c9cdd4] text-center">
-            Sports Lighting Solution LLP
-          </p>
-        </motion.figure>
-        <motion.figure variants={companiesChildrenVariant}>
-          <img
-            src="/companies/image3.webp"
-            alt=""
-            className="w-36 p-3 h-20  aspect-square object-contain max-sm:w-max"
-          />
-          <p className="text-xs font-medium text-[#c9cdd4] text-center">
-            ANCIT Consulting
-          </p>
-        </motion.figure>
-        <motion.figure variants={companiesChildrenVariant}>
-          <img
-            src="/companies/image4.png"
-            alt=""
-            className="w-36 p-3 h-20  aspect-square object-contain max-sm:w-max"
-          />
-          <p className="text-xs font-medium text-[#c9cdd4] text-center">
-            Decibels Lab Pvt Ltd
-          </p>
-        </motion.figure>
-        <motion.figure variants={companiesChildrenVariant}>
-          <img
-            src="/companies/image5.png"
-            alt=""
-            className="w-36 p-3 h-20  aspect-square object-contain max-sm:w-max"
-          />
-          <p className="text-xs font-medium text-[#c9cdd4] text-center">
-            Navstream Innovations
-          </p>
-        </motion.figure>
-        <motion.figure variants={companiesChildrenVariant}>
-          <img
-            src="/companies/image6.jpg"
-            alt=""
-            className="w-36 p-3 h-20  aspect-square object-contain max-sm:w-max "
-          />
-          <p className="text-xs font-medium text-[#c9cdd4] text-center">
-            Designing Alley
-          </p>
-        </motion.figure>
+        {stats.map((stat, index) => (
+          <div key={stat.id} className="p-4 font-['Manrope']">
+            <p className="text-4xl font-bold text-[#0c96d4] text-center">
+              {counts[index]}
+              <span className="text-[#0c96d4]">+</span>
+            </p>
+            <p className="text-gray-600 font-semibold mt-2 text-sm md:text-base">
+              {stat.label}
+            </p>
+          </div>
+        ))}
       </motion.div>
       <motion.div
         className=" text-center"

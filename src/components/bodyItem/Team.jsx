@@ -16,7 +16,7 @@ const teamVariant = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.5,
+      staggerChildren: 0.2,
     },
   },
 };
@@ -42,8 +42,8 @@ const teamCarsolueVariant = {
   visible: {
     opacity: 1,
     transition: {
-      delay: 2,
-      duration: 1,
+      delay: 1,
+      duration: 0.5,
       ease: "easeIn",
     },
   },
@@ -62,7 +62,7 @@ const Team = () => {
       control.start("visible");
       setTimeout(() => {
         setPlay(true);
-      }, 5000);
+      }, 2000);
     }
   }, [teamRef, teamView]);
   return (
@@ -79,9 +79,8 @@ const Team = () => {
         </motion.div>
         <motion.div variants={teamChildVariant}>
           <h1 className="font-semibold font-serif text-4xl text-[#343f52] max-sm:text-3xl">
-            Save your time and <br className="block max-sm:hidden" /> money by
-            choosing our <br className="block max-sm:hidden" /> professional
-            team.
+            Save your time <br className="block max-sm:hidden" /> by choosing
+            our <br className="block max-sm:hidden" /> professional team.
           </h1>
         </motion.div>
         <motion.div variants={teamChildVariant}>
@@ -113,7 +112,7 @@ const Team = () => {
           navigation
           pagination={{ clickable: true }}
           freeMode={false}
-          autoplay={play ? { delay: 1000, disableOnInteraction: false } : false}
+          autoplay={play ? { delay: 500, disableOnInteraction: false } : false}
           speed={2500}
           loop={true}
           initialSlide={0}

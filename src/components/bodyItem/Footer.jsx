@@ -4,7 +4,7 @@ import { HashLink } from "react-router-hash-link";
 
 const Footer = () => {
   return (
-    <section className="px-28 font-['Manrope'] bg-gradient-to-b from-white from-10% to-[#0c96d4] text-[#60697b] font-medium pb-28  max-sm:px-5 ">
+    <section className="px-28 font-['Manrope'] bg-gradient-to-b from-white from-10% to-[#0c96d4] text-[#60697b] font-medium pb-28  max-sm:px-5  ">
       <div className="flex pt-6 max-sm:flex-col">
         <div className="basis-1/4">
           <img src="/logo.png" alt="logo" className="w-[98px] h-16" />

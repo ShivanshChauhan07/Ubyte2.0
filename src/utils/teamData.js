@@ -16,7 +16,7 @@ const teamData = [
     contact: "shivansh@ubyte.in",
   },
   {
-    img: "/about/DhanveerKalsi.jpg",
+    img: "/about/dhanveer.jpg",
     name: "Dhanveer Singh",
     role: "Lead Firmware & Automotive Software Developer ",
     desc: "A highly Skilled Embedded Firmware Developer with 4+ years of experience in prouct development and 20+ products.",

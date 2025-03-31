@@ -130,7 +130,7 @@ const productData = [
   },
   {
     id: 2,
-    name: "SmartWheels V1 Pro",
+    name: "SmartWheels V1 Pro (Including Enclosure)",
     fullName:
       "SmartWheels V1 Pro – Advanced Automotive Control and Monitoring System",
     price: 290,
@@ -145,64 +145,77 @@ const productData = [
           title: "Key Features and Specifications",
           desc: [
             {
-              "Powerful Processing & Connectivity": [
-                "Powered by an ESP32 microcontroller with Wi-Fi and Bluetooth capabilities for seamless wireless communication.",
-                "Includes an 80-pin automotive connector, USB Type-C (JTAG) debugging, and SEGGER J-Link support for advanced programming and debugging.",
+              "1. PERIPHERALS ": [
+                "- 64Mb Flash",
+                "- 4KB EEPROM",
+                "- Passive Buzzer",
+                "- RGB LED",
+                "- Segger J-Link Debugger (Only available on evaluation samples)",
+                "- Onboard Power Monitoring ",
               ],
             },
             {
-              "Versatile Power Management": [
-                "High-efficiency buck converters (5V, 12V) and an AMS1117 3.3V LDO regulator for reliable power delivery.",
-                "Input protection features including reverse polarity protection, transient voltage suppression (TVS), and surge protection, ensuring stable operation across a 6V-36V voltage range.",
+              "2. DIGITAL AND POWER OUTPUTS": [
+                "- 4X Low Side PWM Digital Output (36V 300mA Max)",
+                "- 4X High Side PWM Adjustable Digital Output (5V, 12V and VBAT 300mA Max)",
+                "- 2X High Side Power Output (3A Each)",
+                "- 2X Low Side Power Output (3A Each)",
+                "- 1X HBridge Output (3A)",
               ],
             },
             {
-              "Advanced Motor Control (H-Bridge Driver)": [
-                "Equipped with the DRV8874 H-Bridge motor driver for precise motor control with integrated current sensing and regulation.",
-                "Features overcurrent, undervoltage, and thermal protection for enhanced reliability.",
+              "3. DIGITAL INPUTS": [
+                "- 4X PU High Speed Digital Input (VBAT) ",
+                "- 4X PU High Speed Digital Input (Adjustable 5V, 12V & VBAT)",
+                "- 4X PD High Speed Digital Input (0-36V) ",
+                "- 4X PD High Speed Digital Input (0-5V) ",
+                "- 4X PD Digital Input (0-12V) ",
               ],
             },
             {
-              "Comprehensive Communication Interfaces": [
-                "Isolated & Non-Isolated CAN Transceivers :- Supports ISO 11898 standard, high-speed data rates up to 1 Mbps, and AEC-Q100 qualification for vehicle networking. ",
-                "Dual LIN Transceivers :- Ensures seamless integration with LIN 2.2A and ISO 17987-4:2016 compliant devices, essential for automotive subsystems.",
-                "High-Speed Digital Inputs & Analog Inputs :- Adjustable voltage thresholds, transient protection, and 12-bit ADC resolution, allowing effective handling of various sensor inputs. ",
+              "4. ANALOG INPUTS": [
+                "- 4X 0-10V Analog Voltage Inputs",
+                "- 4X 0-5V Analog Voltage Inputs",
+                "- 2X 4-20mA Analog Current Loop Inputs",
               ],
             },
             {
-              "Cloud-Enabled Monitoring & Diagnostics": [
-                "The INA237 power monitoring IC tracks input voltage, current consumption, and power behavior in real time.",
-                "Data can be transmitted to the cloud for remote diagnostics, predictive maintenance, and power anomaly detection.",
+              "5. ANALOG OUTPUTS": [
+                "- 2x 4–20mA Isolated Analog Current Loop Transmitters",
+                "- Data can be transmitted to the cloud for remote diagnostics, predictive maintenance, and power anomaly detection.",
               ],
             },
             {
-              "Reliable Storage & Data Logging": [
-                "Two high-voltage relay outputs (5A, 277VAC/30VDC) for extended control capabilities.",
-                "Multiple PWM channels for precise actuator and motor control.",
+              "6. WIRED COMMUNICATION": [
+                "- Isolated CAN (Up to 1MBPS)",
+                "- CAN FD (Up to 5MBPS)",
+                "- Standard CAN (Up to 1MBPS)",
+                "- LIN 2.2A (Upto 20KBd) ",
               ],
             },
             {
-              "Relay Control & Expandability": [
-                "Includes W25Q64 (64Mbit) SPI Flash memory and M24C04 (4KB EEPROM) for robust data logging of critical operational parameters.",
+              "7. POWER SUPPLY": [
+                "- Input: 10.8V to 36V With Reverse Polarity Protection, Reverse Current Blocking and Transient Voltage Protection",
               ],
             },
             {
-              "Built-in Alarm System": [
-                "A 4kHz passive buzzer provides audible alerts for alarms and user feedback.",
+              "8. WIRELESS COMMUNICATION": [
+                "- ESP32 C3 Mini Wi-Fi & BLE",
+                "- Optional 4G/2G + GPS (Neoway N58)",
               ],
             },
           ],
         },
       ],
     },
-    img: "/productPage/Smart/Best1.png",
+    img: "/productPage/Smart/Best.png",
     images: [
-      "/productPage/Smart/Best1.png",
+      "/productPage/Smart/Best.png",
       "/productPage/Smart/2.png",
       "/productPage/Smart/3.png",
-      "/productPage/Smart/4.png",
-      "/productPage/Smart/5.png",
-      "/productPage/Smart/6.jpg",
+      "/productPage/Smart/4.jpg",
+      "/productPage/Smart/5.jpg",
+      "/productPage/Smart/6.png",
     ],
     choose: {
       "Why Choose SmartWheels V1 Pro?": [
@@ -214,9 +227,9 @@ const productData = [
     },
     endDesc:
       "Upgrade your automotive or industrial automation project today with SmartWheels V1 Pro!",
-    pdf: "https://res.cloudinary.com/dvi4f7mfm/image/upload/v1740321192/Ubyte2.0/SmartWheel_V1_Pro_Documentation_noimcv.pdf",
+    pdf: "https://res.cloudinary.com/dvi4f7mfm/image/upload/v1743097555/Ubyte2.0/SmartWheels_V1_Pro_Part_1.docx_compressed_n9pcw8.pdf",
     infra: "",
-    mart: "",
+    mart: "https://www.indiamart.com/proddetail/smartwheels-v1-pro-including-enclosure-2855818993255.html?pos=9&kwd=smart%20wheels%20v1%20pro&tags=BB||||31.840384|Price|product||ghaziabad|NA|rsf:gd-|-res:RC3|ktp:N0|stype:attr=1|mtp:S|wc:3|cq:ghaziabad|qr_nm:gl-gd|cs:15483|com-cf:nl|ptrs:na|mc:118962|cat:29|qry_typ:P|lang:en|rtn:1-0-0-0-4-5-0|tyr:2|qrd:250326|mrd:250330|prdt:250330|v=4&crs=bp ",
   },
   {
     id: 3,
@@ -270,6 +283,61 @@ const productData = [
     infra:
       "https://electronicsinfra.com/product/quad-channel-usb-to-uart-converter/",
     mart: "https://www.indiamart.com/proddetail/quad-channel-usb-to-uart-convertor-2855820441030.html",
+  },
+  {
+    id: 4,
+    name: "SmartWheels EV2",
+    fullName: "",
+    price: 52.54,
+    indiaPrice: 4500,
+    shortDesc:
+      "The SmartWheels EV2 is a low-cost development board featuring the NXP S32K144UAT0VLLT microcontroller with ISO26262 ASIL Class B safety compliance. It includes an onboard Segger J-Link debugger, a Bosch BNO055 IMU sensor, and a CAN2.0B transceiver supporting CAN FD. The board offers switchable 3.3V and 5V logic levels, adjustable ADC reference voltage, and 74 GPIOs, making it flexible for prototyping.",
+    desc: {
+      intro:
+        "The SmartWheels EV2 is a low cost development board based on the NXP S32K144UAT0VLLT microcontroller. The S32K144 offers functional safety compliance with ISO26262 ASIL Class B. The SmartWheels EV2 is equipped with onboard Segger J-Link Debugger along with CAN2.0B transceiver and Bosch BNO055 IMU sensor. This makes the SmartWheels EV2 a complete development package in itself. The SmartWheels EV2 also allows the user to switch between 3.3V and 5V logic along with the ability to change the ADC Reference voltage between 3.3V and 5V. It makes the SmartWheels EV2 extremely flexible for prototyping. The SmartWheels EV2 is made in a breadboard Compatible form factor offering 74 GPIOs for utilizing various peripherals of the S32K144 microcontroller. The board also integrated a RGB LED along with 2 push buttons.",
+      features: [
+        {
+          title: "Key Features:",
+          desc: [
+            "NXP S32K144UAT0VLLT chipset",
+            "Onboard Segger J-Link Debugger",
+            "USB Type-C for power supply and debugging",
+            "Bosch BNO055 IMU sensor",
+            "USB to UART through Segger J-Link.",
+            "CAN2.0B Transceiver supporting CAN FD with extended frame",
+            "4KB EEPROM",
+            "RGB LED",
+            "Two User Push Buttons",
+            "10P JTAG for external debugger",
+            "8 MHz high-speed external oscillator (HSE)",
+            "High-precision (3.3V ± 0.2%) voltage reference for ADC",
+            "Switchable ADC reference voltage between 3.3V and 5V",
+          ],
+        },
+      ],
+    },
+    img: "/productPage/SmartEv/Best.png",
+    images: [
+      "/productPage/SmartEv/Best.png",
+      "/productPage/SmartEv/2.png",
+      "/productPage/SmartEv/3.jpg",
+      "/productPage/SmartEv/4.png",
+      "/productPage/SmartEv/5.png",
+      "/productPage/SmartEv/6.png",
+    ],
+    choose: {
+      "Applications:": [
+        "Embedded System Development",
+        "ESP32 Firmware Programming",
+        "Industrial Automation",
+        "IoT and Smart Device Prototyping",
+        "Multi-UART Debugging & Monitoring",
+      ],
+    },
+    endDesc: "",
+    pdf: "https://res.cloudinary.com/dvi4f7mfm/image/upload/v1743097548/Ubyte2.0/Ubyte_SmartWheels_EV2_Datasheet_compressed_1_z5psqx.pdf",
+    infra: "",
+    mart: "https://www.indiamart.com/proddetail/smartwheels-ev2-2856275841012.html?pos=1&kwd=smart%20wheels%20ev2&tags=BB||||31.840384|Price|product||ghaziabad|NA|rsf:gd-|-res:RC2|ktp:N0|stype:attr=1|mtp:Brn|wc:2|cq:ghaziabad|qr_nm:gl-gd|cs:15286|com-cf:nl|ptrs:na|mc:204255|cat:58|qry_typ:P|lang:en|rtn:2-0-0-0-3-4-1|tyr:2|qrd:250326|mrd:250330|prdt:250330|v=4",
   },
 ];
 

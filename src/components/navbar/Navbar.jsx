@@ -71,8 +71,29 @@ const Navbar = forwardRef((props, ref) => {
         shadow && "shadow-md bg-white"
       } max-sm:flex-col max-sm:items-start max-sm:px-2 `}
     >
-      <div className="hidden max-sm:block" onClick={() => setBurger(!burger)}>
-        <i className="fa-solid fa-bars text-4xl"></i>
+      <div
+        className="hidden max-sm:flex justify-between"
+        onClick={() => setBurger(!burger)}
+      >
+        <div className=" max-sm: my-auto py-2 ">
+          <motion.img
+            initial={{ x: -50, opacity: 0 }}
+            animate={{
+              x: 0,
+              opacity: 1,
+              transition: {
+                type: "spring",
+                damping: 50,
+                delay: 0.3,
+              },
+            }}
+            src="/logo2.png"
+            alt="logo"
+            className=" max-sm: aspect-auto w-1/2 "
+          />
+          {/* <span className="">Ubyte Consulting </span> */}
+        </div>
+        <i className="fa-solid fa-bars text-4xl self-center"></i>
       </div>
       <div
         className={`flex justify-between px-28 ${
@@ -93,11 +114,11 @@ const Navbar = forwardRef((props, ref) => {
                 delay: 0.3,
               },
             }}
-            src="/logo.png"
+            src="/logo2.png"
             alt="logo"
-            className="w-[98px] h-16 max-sm:mx-auto"
+            className="aspect-auto w-9/12 max-sm:mx-auto"
           />
-          <span className="">Ubyte Consulting </span>
+          {/* <span className="">Ubyte Consulting </span> */}
         </div>
         <div className=" basis-3/5 my-auto">
           <motion.ul
@@ -166,7 +187,16 @@ const Navbar = forwardRef((props, ref) => {
             }}
             className=" bg-[#0c96d4] text-white rounded-3xl p-3 px-6 font-bold hover:shadow-lg max-sm:hidden "
           >
-            <HashLink to={"/about#contactForm"} smooth>
+            <HashLink
+              to={"/about#contactForm"}
+              smooth
+              scroll={(el) => {
+                const yOffset = -1; // Adjust this value as needed
+                const y =
+                  el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({ top: y, behavior: "smooth" });
+              }}
+            >
               Contact Us
             </HashLink>
           </motion.button>

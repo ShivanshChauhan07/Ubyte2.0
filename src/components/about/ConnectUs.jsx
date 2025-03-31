@@ -19,8 +19,8 @@ const variant = {
       type: "spring",
       stiffness: 300,
       damping: 50,
-      delayChildren: 0.2,
-      staggerChildren: 0.5,
+      delayChildren: 0.1,
+      staggerChildren: 0.2,
     },
   },
 };
@@ -68,7 +68,7 @@ const ConnectUs = () => {
             className="phoneSvg"
             initial={{ opacity: 1 }}
             whileInView={{ opacity: 0 }}
-            transition={{ duration: 1, delay: 3 }}
+            transition={{ duration: 1, delay: 2 }}
           >
             <svg
               width={window.innerWidth > 640 ? "450px" : "350px"}
@@ -83,7 +83,7 @@ const ConnectUs = () => {
                 strokeWidth={0.2}
                 initial={{ pathLength: 0 }}
                 animate={isInView && { pathLength: 1 }}
-                transition={{ duration: 3 }}
+                transition={{ duration: 2 }}
                 fill="none"
                 d="M28.189,16.504h-1.666c0-5.437-4.422-9.858-9.856-9.858l-0.001-1.664C23.021,4.979,28.189,10.149,28.189,16.504z
             M16.666,7.856L16.665,9.52c3.853,0,6.983,3.133,6.981,6.983l1.666-0.001C25.312,11.735,21.436,7.856,16.666,7.856z M16.333,0
@@ -104,7 +104,7 @@ const ConnectUs = () => {
           <motion.form
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 4 }}
+            transition={{ duration: 1, delay: 2 }}
             ref={formRef}
             className="text-black"
             onSubmit={(e) => {
