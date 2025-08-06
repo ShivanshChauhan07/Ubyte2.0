@@ -130,11 +130,11 @@ const productData = [
   },
   {
     id: 2,
-    name: "SmartWheels V1 Pro (Including Enclosure)",
+    name: "Ancit-Ubyte SmartWheels V1 Pro (Including Enclosure)",
     fullName:
       "SmartWheels V1 Pro – Advanced Automotive Control and Monitoring System",
-    price: 290,
-    indiaPrice: 25130,
+    price: "NA",
+    indiaPrice: "NA",
     shortDesc:
       "SmartWheels V1 Pro is an advanced automotive control and monitoring system with motor control, CAN/LIN communication, power management, and cloud connectivity—ideal for smart vehicles and IoT-based applications.",
     desc: {
@@ -229,7 +229,7 @@ const productData = [
       "Upgrade your automotive or industrial automation project today with SmartWheels V1 Pro!",
     pdf: "https://res.cloudinary.com/dvi4f7mfm/image/upload/v1743097555/Ubyte2.0/SmartWheels_V1_Pro_Part_1.docx_compressed_n9pcw8.pdf",
     infra: "",
-    mart: "https://www.indiamart.com/proddetail/smartwheels-v1-pro-including-enclosure-2855818993255.html?pos=9&kwd=smart%20wheels%20v1%20pro&tags=BB||||31.840384|Price|product||ghaziabad|NA|rsf:gd-|-res:RC3|ktp:N0|stype:attr=1|mtp:S|wc:3|cq:ghaziabad|qr_nm:gl-gd|cs:15483|com-cf:nl|ptrs:na|mc:118962|cat:29|qry_typ:P|lang:en|rtn:1-0-0-0-4-5-0|tyr:2|qrd:250326|mrd:250330|prdt:250330|v=4&crs=bp ",
+    mart: "",
   },
   {
     id: 3,
@@ -286,10 +286,10 @@ const productData = [
   },
   {
     id: 4,
-    name: "SmartWheels EV2",
+    name: "Ancit-Ubyte SmartWheels EV2",
     fullName: "",
-    price: 52.54,
-    indiaPrice: 4500,
+    price: "NA",
+    indiaPrice: "NA",
     shortDesc:
       "The SmartWheels EV2 is a low-cost development board featuring the NXP S32K144UAT0VLLT microcontroller with ISO26262 ASIL Class B safety compliance. It includes an onboard Segger J-Link debugger, a Bosch BNO055 IMU sensor, and a CAN2.0B transceiver supporting CAN FD. The board offers switchable 3.3V and 5V logic levels, adjustable ADC reference voltage, and 74 GPIOs, making it flexible for prototyping.",
     desc: {
@@ -337,7 +337,7 @@ const productData = [
     endDesc: "",
     pdf: "https://res.cloudinary.com/dvi4f7mfm/image/upload/v1743097548/Ubyte2.0/Ubyte_SmartWheels_EV2_Datasheet_compressed_1_z5psqx.pdf",
     infra: "",
-    mart: "https://www.indiamart.com/proddetail/smartwheels-ev2-2856275841012.html?pos=1&kwd=smart%20wheels%20ev2&tags=BB||||31.840384|Price|product||ghaziabad|NA|rsf:gd-|-res:RC2|ktp:N0|stype:attr=1|mtp:Brn|wc:2|cq:ghaziabad|qr_nm:gl-gd|cs:15286|com-cf:nl|ptrs:na|mc:204255|cat:58|qry_typ:P|lang:en|rtn:2-0-0-0-3-4-1|tyr:2|qrd:250326|mrd:250330|prdt:250330|v=4",
+    mart: "",
   },
 ];
 

@@ -138,34 +138,36 @@ const ProductPage = () => {
               </h3>
             </div>
             <h4>Also CheckOut On </h4>
-            <div className="flex gap-x-8">
-              <figure className="hover:cursor-pointer">
-                {" "}
-                <img
-                  className="w-20 h-10 rounded-md border-2 border-slate-100 "
-                  src="/productPage/amazon.jpg"
-                  alt=""
-                />
-              </figure>
-              <figure className="hover:cursor-pointer">
-                <a href={product?.infra}>
+            {product.price != "NA" && (
+              <div className="flex gap-x-8">
+                <figure className="hover:cursor-pointer">
+                  {" "}
                   <img
-                    className="w-20 h-10 rounded-md"
-                    src="/productPage/Electronic.webp"
+                    className="w-20 h-10 rounded-md border-2 border-slate-100 "
+                    src="/productPage/amazon.jpg"
                     alt=""
                   />
-                </a>
-              </figure>
-              <figure className="hover:cursor-pointer">
-                <a href={product?.mart}>
-                  <img
-                    className="w-20 h-10 rounded-md aspect-square"
-                    src="/productPage/mart.png"
-                    alt=""
-                  />
-                </a>
-              </figure>
-            </div>
+                </figure>
+                <figure className="hover:cursor-pointer">
+                  <a href={product?.infra}>
+                    <img
+                      className="w-20 h-10 rounded-md"
+                      src="/productPage/Electronic.webp"
+                      alt=""
+                    />
+                  </a>
+                </figure>
+                <figure className="hover:cursor-pointer">
+                  <a href={product?.mart}>
+                    <img
+                      className="w-20 h-10 rounded-md aspect-square"
+                      src="/productPage/mart.png"
+                      alt=""
+                    />
+                  </a>
+                </figure>
+              </div>
+            )}
           </div>
         </div>
       </section>

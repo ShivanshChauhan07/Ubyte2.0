@@ -15,10 +15,12 @@ const ShopCard = ({ id, name, img, desc, price, indiaPrice }) => {
       </div>
       <div className="basis-1/4 content-center ">
         <div className="flex flex-col items-center gap-y-2">
-          <h3 className="text-3xl font-semibold text-[#0c96d4]">${price}</h3>
+          <h3 className="text-3xl font-semibold text-[#0c96d4]">
+            {price != "NA" && `$ ${price}`}
+          </h3>
           <h6 className="text-xl font-semibold text-[#0c96d4]">
             {" "}
-            (₹{indiaPrice})
+            {indiaPrice != "NA" && `₹ ${indiaPrice}`}
           </h6>
           <p>⭐⭐⭐⭐⭐</p>
           <Link to={`/shop/product/${id}`}>
